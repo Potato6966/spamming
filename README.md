@@ -4,7 +4,7 @@
 
 **Fortnite: [Latest](https://github.com/syrxty/SYRXTY-IPA/releases/tag/v34.00.2)**
 
-**REPOS (Only if you have a signer like appdb or feather):** *[https//syrxtyfv.xyz/SyrxtyRepo.json](https//syrxtyfv.xyz/SyrxtyRepo.json)*
+**REPOS (Only if you have a signer like appdb or feather):** *[https//syrxtyfv.xyz/SyrxtyRepo.json](https://syrxtyfv.xyz/SyrxtyRepo.json)*
 
 **If u need help - join our [discord](https://discord.gg/WhJ2wCgSHp)**
 

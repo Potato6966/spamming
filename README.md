@@ -4,18 +4,14 @@
 
 **Fortnite: [v34.00.2](https://github.com/vedma1337/EGS-IPA/releases/download/v34.00.2/Fortnite-34.00.2.ipa)**
 
-**Fortnite+CAHighFPS: [v34.00.2](https://github.com/vedma1337/EGS-IPA/releases/download/v34.00.2/Fortnite-34.00.2+CAHighFPS.ipa)**
-
-**FallGuys: [v11.6.0](https://github.com/vedma1337/EGS-IPA/releases/download/v11.6.0/Fall.Guys-11.6.0.ipa)**
-
-**If u need help - join our [discord](https://discord.gg/dJRQP8vJPp)**
+**If u need help - join our [discord](https://discord.gg/WhJ2wCgSHp)**
 
 ### Installing Fortnite with
 
 <details>
 <summary><h2>FlekStore (Recommended)</h2></summary>
 
-* **You can get your paid developer certificate via [FlekStore](https://flekstore.com/vedma1337) and get premium subscription for 2 months for free and easily install Fortnite via FlekStore**
+* **You can get your paid developer certificate via [DXSIGN](https://dxsign.cc/) and buy 1 year certificate for 5$ and download feather in their website!**
 </details>
 
 <details>
@@ -35,7 +31,7 @@ Enable these following entitlements if you don't have it (otherwise it will cras
 </details>
 
 ## Support and news
-**Discord server:** [Mine](https://discord.gg/dJRQP8vJPp)
+**Discord server:** [Mine](https://discord.gg/WhJ2wCgSHp)
 
 ---
 

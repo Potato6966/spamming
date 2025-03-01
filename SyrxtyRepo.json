@@ -1,0 +1,51 @@
+{
+    "name": "Syrxty IPA Repo",
+    "identifier": "com.alphaipas.repo",
+    "iconURL": "https://cdn.discordapp.com/attachments/1275083901550727208/1345099569846816818/IMG_8744.png?ex=67c3f9d8&is=67c2a858&hm=448005d3f6a4c4be1aaa6b2878cee1a1931e2da2e7065e9dc62cbc9aafe073ad&format=webp&quality=lossless&width=656&height=656",
+    "apps": [
+        {
+            "name": "Fortnite",
+            "bundleIdentifier": "com.epicgames.FortniteGame",
+            "developerName": "Epic Games",
+            "iconURL": "https://alphaipas.1337.cx/media/fnicon.png",
+            "localizedDescription": "Fortnite on iOS.",
+            "subtitle": "Need paid certificate with entitlements",
+            "tintColor": "848ef9",
+            "category": "games",
+            "versions": [
+                {
+                    "version": "v34.00.2",
+                    "date": "2025-02-28",
+                    "size": 221825000,
+                    "downloadURL": "https://github.com/syrxty/SYRXTY-IPA/releases/download/v34.00.2/Syrxty-FnIPA-v34.00.2.ipa"
+                }
+            ],
+            "size": 266338304,
+            "version": "34.00.2",
+            "versionDate": "2025-02-28",
+            "downloadURL": "https://github.com/syrxty/SYRXTY-IPA/releases/download/v34.00.2/Syrxty-FnIPA-v34.00.2.ipa",
+            "appPermissions": {
+                "entitlements": [
+                    "com.apple.developer.kernel.extended-virtual-addressing",
+                    "com.apple.developer.kernel.increased-memory-limit"
+                ],
+                "privacy": {
+                    "NSCameraUsageDescription": "This permission is not requested or used and will be removed in a future version of the game.",
+                    "NSMicrophoneUsageDescription": "Fortnite needs microphone access for voice chat."
+                }
+            }
+        },
+    ],
+    "news": [
+        {
+            "title": "Syrxty IPA Repo Released!",
+            "identifier": "new_feature",
+            "caption": "Syrxty IPA Repo is released!",
+            "date": "2025-03-01",
+            "tintColor": "5ca399",
+            "imageURL": "https://media.discordapp.net/attachments/1275083901550727208/1345099569846816818/IMG_8744.png?ex=67c3f9d8&is=67c2a858&hm=448005d3f6a4c4be1aaa6b2878cee1a1931e2da2e7065e9dc62cbc9aafe073ad&=&format=webp&quality=lossless&width=656&height=656",
+            "notify": true,
+            "url": "https://discord.gg/WhJ2wCgSHp"
+        }
+    ]
+}

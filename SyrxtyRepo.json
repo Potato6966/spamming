@@ -1,6 +1,6 @@
 {
     "name": "Syrxty IPA Repo",
-    "identifier": "com.alphaipas.repo",
+    "identifier": "com.syrxtyipas.repo",
     "iconURL": "https://cdn.discordapp.com/attachments/1275083901550727208/1345099569846816818/IMG_8744.png?ex=67c3f9d8&is=67c2a858&hm=448005d3f6a4c4be1aaa6b2878cee1a1931e2da2e7065e9dc62cbc9aafe073ad&format=webp&quality=lossless&width=656&height=656",
     "apps": [
         {
@@ -21,9 +21,6 @@
                 }
             ],
             "size": 266338304,
-            "version": "34.00.2",
-            "versionDate": "2025-02-28",
-            "downloadURL": "https://github.com/syrxty/SYRXTY-IPA/releases/download/v34.00.2/Syrxty-FnIPA-v34.00.2.ipa",
             "appPermissions": {
                 "entitlements": [
                     "com.apple.developer.kernel.extended-virtual-addressing",
@@ -34,7 +31,7 @@
                     "NSMicrophoneUsageDescription": "Fortnite needs microphone access for voice chat."
                 }
             }
-        },
+        }
     ],
     "news": [
         {

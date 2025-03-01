@@ -9,7 +9,7 @@
 ### Installing Fortnite with
 
 <details>
-<summary><h2>FlekStore (Recommended)</h2></summary>
+<summary><h2>DXSIGN (Recommended)</h2></summary>
 
 * **You can get your paid developer certificate via [DXSIGN](https://dxsign.cc/) and buy 1 year certificate for 5$ and download feather in their website!**
 </details>

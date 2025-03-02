@@ -31,38 +31,6 @@
           "NSMicrophoneUsageDescription": "Fortnite needs microphone access for voice chat."
         }
       }
-    },
-    {
-      "name": "OG Fortnite",
-      "bundleIdentifier": "com.chairentertainment.Fortnite",
-      "developerName": "Epic Games",
-      "iconURL": "https://media.discordapp.net/attachments/1132402297272533104/1345507227754299523/AppIcon60x602x.png?ex=67c4ccc1&is=67c37b41&hm=36312ee526722ef136dbd08f023f7a69dd53777c2ef5a89de493e2b15d41b1be&=&format=webp&quality=lossless",
-      "localizedDescription": "Fortnite Chapter 2 on iOS (2020).",
-      "subtitle": "Need paid certificate with entitlements",
-      "tintColor": "848ef9",
-      "category": "games",
-      "versions": [
-        {
-          "version": "v13.40.1",
-          "date": "2020-08-06",
-          "size": 261897000,
-          "downloadURL": "https://github.com/syrxty/SYRXTY-IPA/releases/download/v13.40.1/Syrxty-FnIPA-v13.40.1.ipa"
-        }
-      ],
-      "size": 261897000,
-      "version": "13.40.1",
-      "versionDate": "2020-08-05",
-      "downloadURL": "https://github.com/syrxty/SYRXTY-IPA/releases/download/v13.40.1/Syrxty-FnIPA-v13.40.1.ipa",
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.developer.kernel.extended-virtual-addressing",
-          "com.apple.developer.kernel.increased-memory-limit"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "This permission is not requested or used and will be removed in a future version of the game.",
-          "NSMicrophoneUsageDescription": "Fortnite needs microphone access for voice chat."
-        }
-      }
     }
   ],
   "news": [

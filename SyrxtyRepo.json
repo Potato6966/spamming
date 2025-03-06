@@ -14,10 +14,10 @@
       "category": "games",
       "versions": [
         {
-          "version": "v34.00.2",
-          "date": "2025-02-28",
+          "version": "v34.00.3",
+          "date": "2025-03-06",
           "size": 221825000,
-          "downloadURL": "https://github.com/syrxty/SYRXTY-IPA/releases/download/v34.00.2/Syrxty-FnIPA-v34.00.2.ipa"
+          "downloadURL": "https://github.com/syrxty/SYRXTY-IPA/releases/download/v34.00.3/Syrxty-FnIPA-v34.00.3.ipa"
         }
       ],
       "size": 266338304,
@@ -38,7 +38,7 @@
       "title": "Syrxty IPA Repo Released!",
       "identifier": "new_feature",
       "caption": "Syrxty IPA Repo is released!",
-      "date": "2025-03-01",
+      "date": "2025-03-06",
       "tintColor": "5ca399",
       "imageURL": "https://media.discordapp.net/attachments/1275083901550727208/1345099569846816818/IMG_8744.png?ex=67c3f9d8&is=67c2a858&hm=448005d3f6a4c4be1aaa6b2878cee1a1931e2da2e7065e9dc62cbc9aafe073ad&=&format=webp&quality=lossless&width=656&height=656",
       "notify": true,

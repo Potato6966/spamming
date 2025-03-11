@@ -36,31 +36,11 @@
       }
     </script>
     <style>
-      /* Animated Starry Universe Background */
+      /* Fortnite Battle Royale Background */
       body {
-        background-color: #000;
-        overflow: hidden;
-      }
-
-      /* Star Animation */
-      .stars {
-        width: 2px;
-        height: 2px;
-        background: white;
-        position: absolute;
-        animation: twinkle 3s infinite ease-in-out;
-      }
-
-      @keyframes twinkle {
-        0%, 100% { opacity: 0.3; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.5); }
-      }
-
-      /* Floating Animation */
-      @keyframes floating {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
+        background: url('https://wallpaperaccess.com/full/1087722.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
       }
 
       /* Animated Button */
@@ -77,12 +57,9 @@
     </style>
 </head>
 <body class="text-white font-sans">
-    <div class="max-w-3xl mx-auto p-6 text-center relative">
-        <!-- Stars Container -->
-        <div id="stars-container"></div>
-
+    <div class="max-w-3xl mx-auto p-6 text-center">
         <!-- Updated Logo -->
-        <img src="https://media.discordapp.net/attachments/1132402297272533104/1349049918538518588/IMG_3968.png?ex=67d1b024&is=67d05ea4&hm=807e2f3438297a5110f3c219eda7f36aae9084ec039999e2e26eabf2afb0dbf1&" 
+        <img src="https://media.discordapp.net/attachments/1132402297272533104/1349049918538518588/IMG_3968.png" 
              alt="Syrxty Logo" 
              class="mx-auto w-48 md:w-64 lg:w-72 mb-4 animate-pulse">
         
@@ -105,9 +82,8 @@
                     <li>Allows editing files from the Files app</li>
                     <li>MacOS Fullscreen Patch</li>
                     <li>Lowered minimum iOS version to iOS 10</li>
-                    <h1><------------------------></h1>
-                    <li>A patched version that functions without entitlements is also available, featuring +Patched at the end. This version is compatible with all certificates; however, please be advised that users may experience occasional crashes during gameplay due to potential limitations related to RAM. It is important to note that this version may carry certain risks, and usage is at the discretion of the user.</li>
-                    <li>Using this version of ipa to play competitive could get you <b>BAN</b>!</li>
+                    <li>A patched version that functions without entitlements is also available, featuring +Patched at the end.</li>
+                    <li>Using this version of IPA to play competitive could get you <b>BANNED</b>!</li>
                 </ul>
                 <p class="mt-2 text-gray-300"><strong>Current Version:</strong> <b>v34.10</b></p>
 
@@ -139,22 +115,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Generate Random Stars
-        function createStars(count) {
-            const container = document.getElementById("stars-container");
-            for (let i = 0; i < count; i++) {
-                let star = document.createElement("div");
-                star.classList.add("stars");
-                star.style.left = Math.random() * window.innerWidth + "px";
-                star.style.top = Math.random() * window.innerHeight + "px";
-                star.style.animationDuration = Math.random() * 3 + 2 + "s";
-                container.appendChild(star);
-            }
-        }
-        createStars(100);
-    </script>
 
     <footer class="text-center text-gray-400 mt-8 pb-4">
         Website made by <span class="text-white font-bold">Syrxty</span>, and IPA founded by <span class="text-white font-bold">FnMacIPA</span>.

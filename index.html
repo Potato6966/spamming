@@ -36,9 +36,11 @@
       }
     </script>
     <style>
-      /* Gray Background */
+      /* Background Image */
       body {
-        background: #1f1f1f;
+        background: url('https://media.discordapp.net/attachments/1132402297272533104/1349068918752284752/IMG_4054.jpg?ex=67d1c1d6&is=67d07056&hm=11fcc8ab1fceef77fd8c11a167e93dc2d0bab93633eb7895e83f8cf118c3cf0d&') 
+                    no-repeat center center fixed;
+        background-size: cover;
         color: white;
       }
 
@@ -53,10 +55,17 @@
         transform: scale(1.05);
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
       }
+
+      /* Content Background */
+      .content-box {
+        background: rgba(0, 0, 0, 0.7); /* Adds readability */
+        padding: 20px;
+        border-radius: 10px;
+      }
     </style>
 </head>
 <body class="text-white font-sans">
-    <div class="max-w-3xl mx-auto p-6 text-center">
+    <div class="max-w-3xl mx-auto p-6 text-center content-box">
         <!-- Updated Logo -->
         <img src="https://media.discordapp.net/attachments/1132402297272533104/1349049918538518588/IMG_3968.png?ex=67d1b024&is=67d05ea4&hm=807e2f3438297a5110f3c219eda7f36aae9084ec039999e2e26eabf2afb0dbf1&" 
              alt="Syrxty Logo" 

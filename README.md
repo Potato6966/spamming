@@ -2,7 +2,7 @@
 
 **Fortnite needs 4GB ram to launch, if your device has 3gb ram or lower you can't play fortnite. There is no bypass of it.**
 
-**Fortnite: [Latest](https://github.com/syrxty/SYRXTY-IPA/releases/tag/v34.00.3)**
+**Fortnite: [Latest](https://github.com/syrxty/SYRXTY-IPA/releases/tag/v34.10)**
 
 **REPOS (Only if you have a signer like appdb or feather):** *[https//syrxtyfv.xyz/SyrxtyRepo.json](https://syrxtyfv.xyz/SyrxtyRepo.json)*
 

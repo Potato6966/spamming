@@ -11,40 +11,29 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-9N1XVJ5VYW', { 'debug_mode': true });
-    </script>
-    <script>
-      function trackDownload(fileName, event) {
-        if (event) event.preventDefault(); 
-        gtag('event', 'download', {
-          'event_category': 'Downloads',
-          'event_label': fileName,
-          'value': 1 
-        });
 
-        setTimeout(function() {
-          window.location.href = event.target.href;
-        }, 500); 
-      }
-    </script>
-    <script>
       const securityToken = "U3lyeHR5aXBh"; // Base64 for 'Syrxtyipa'
 
-      function requestAccess() {
-        let userKey = prompt("Enter the password to access this site:");
-        let processedKey = btoa(userKey); 
-        
-        if (processedKey === securityToken) {
-          document.getElementById("content").style.display = "block"; 
-        } else {
-          alert("Incorrect password! You can find it in the Discord server.");
-          document.body.innerHTML = ""; 
-        }
-      }
+      function requestDownload(fileName, url, event) {
+          if (event) event.preventDefault();
+          
+          let userKey = prompt("Enter the password to download:");
+          let processedKey = btoa(userKey); 
 
-      document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("content").style.display = "none";
-        requestAccess();
-      });
+          if (processedKey === securityToken) {
+              gtag('event', 'download', {
+                  'event_category': 'Downloads',
+                  'event_label': fileName,
+                  'value': 1 
+              });
+
+              setTimeout(function() {
+                  window.location.href = url;
+              }, 500); 
+          } else {
+              alert("Incorrect password! You can find it in the Discord server.");
+          }
+      }
     </script>
     <style>
       /* Starry Universe Background */
@@ -57,78 +46,62 @@
         background-repeat: repeat;
         overflow-x: hidden;
       }
-
-      /* Adding a star layer */
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: radial-gradient(white 1px, transparent 1px);
-        background-size: 200px 200px;
-        opacity: 0.7;
-        pointer-events: none;
-      }
     </style>
 </head>
 <body class="text-white font-sans">
-    <div id="content" style="display: none;">  
-        <div class="max-w-3xl mx-auto p-6 text-center">
-            <!-- Fortnite Logo -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Fortnite_Logo.png" 
-                 alt="Fortnite Logo" 
-                 class="mx-auto w-48 md:w-64 lg:w-72 mb-4">
-            
-            <h1 class="text-3xl font-bold mb-4">Download Fortnite & Fall Guys IPAs</h1>
-            
-            <p class="text-center text-gray-300">Join the Syrxty Discord server to be the first to know when a new update releases, for both iOS and Mac!</p>
-            <div class="text-center mt-2">
-                <a href="https://discord.gg/uq9bndvYuj" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Join Discord</a>
-            </div>
-            
-            <div class="mt-6 space-y-4">
-                <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold">Fortnite IPAs</h2>
-                    <p class="text-gray-400">Fortnite IPA includes the following tweaks:</p>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Removed device restriction</li>
-                        <li>Allows editing files from the Files app</li>
-                        <li>MacOS Fullscreen Patch</li>
-                        <li>Lowered minimum iOS version to iOS 10</li>
-                    </ul>
-                    <p class="mt-2 text-gray-300"><strong>Current Version:</strong> 34.10</p>
+    <div class="max-w-3xl mx-auto p-6 text-center">
+        <!-- Updated Logo -->
+        <img src="https://media.discordapp.net/attachments/1132402297272533104/1349049918538518588/IMG_3968.png?ex=67d1b024&is=67d05ea4&hm=807e2f3438297a5110f3c219eda7f36aae9084ec039999e2e26eabf2afb0dbf1&" 
+             alt="Syrxty Logo" 
+             class="mx-auto w-48 md:w-64 lg:w-72 mb-4">
+        
+        <h1 class="text-3xl font-bold mb-4">Download Fortnite & Fall Guys IPAs</h1>
+        
+        <p class="text-center text-gray-300">Join the Syrxty Discord server to be the first to know when a new update releases, for both iOS and Mac!</p>
+        <div class="text-center mt-2">
+            <a href="https://discord.gg/uq9bndvYuj" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Join Discord</a>
+        </div>
 
-                    <a href="https://github.com/syrxty/spamming/releases/download/v34.10/Syrxty-FnIPA-v34.10.ipa"
-                       class="block mt-2 bg-green-600 hover:bg-green-700 text-white text-center font-bold py-2 px-4 rounded"
-                       onclick="trackDownload('Fortnite IPA', event)">
-                       Download Fortnite IPA (Recommended)
-                    </a>
-                </div>
+        <div class="mt-6 space-y-4">
+            <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold">Fortnite IPAs</h2>
+                <p class="text-gray-400">Fortnite IPA includes the following tweaks:</p>
+                <ul class="list-disc list-inside text-gray-400">
+                    <li>Removed device restriction</li>
+                    <li>Allows editing files from the Files app</li>
+                    <li>MacOS Fullscreen Patch</li>
+                    <li>Lowered minimum iOS version to iOS 10</li>
+                </ul>
+                <p class="mt-2 text-gray-300"><strong>Current Version:</strong> 34.10</p>
 
-                <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold">Fall Guys IPAs</h2>
-                    <h3 class="text-l">If the regular IPA doesn't work, try the clean version.</h3>
-                    <p class="text-gray-400">Fall Guys IPA includes the following tweaks:</p>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Removed device restriction</li>
-                        <li>Allows editing files from the Files app</li>
-                        <li>MacOS Fullscreen Patch</li>
-                        <li>Lowered minimum iOS version to iOS 10</li>
-                    </ul>
-                    <p class="mt-2 text-gray-300"><strong>Current Version:</strong> 11.6.0</p>
-
-                    <a href="https://fnmacassistant.s3.us-west-1.amazonaws.com/FGMacIPAs/Fall_Guys-11.6.0.ipa" class="block mt-2 bg-purple-600 hover:bg-purple-700 text-white text-center font-bold py-2 px-4 rounded" onclick="trackDownload('Fall Guys IPA', event)">Download Fall Guys IPA</a>
-                    <p class="mt-3 text-gray-400">Fall Guys Clean IPA: Unmodified IPA file, straight from source.</p>
-                    <a href="https://fnmacassistant.s3.us-west-1.amazonaws.com/FGMacIPAs/Fall_Guys-11.6.0_Clean.ipa" class="block mt-2 bg-gray-600 hover:bg-gray-700 text-white text-center font-bold py-2 px-4 rounded" onclick="trackDownload('Fall Guys Clean', event)">Download Clean IPA</a>
-                </div>
+                <a href="#" class="block mt-2 bg-green-600 hover:bg-green-700 text-white text-center font-bold py-2 px-4 rounded"
+                   onclick="requestDownload('Fortnite IPA', 'https://github.com/syrxty/spamming/releases/download/v34.10/Syrxty-FnIPA-v34.10.ipa', event)">
+                   Download Fortnite IPA (Recommended)
+                </a>
             </div>
 
-            <div class="mt-6 p-4 bg-gray-800 rounded-lg shadow-md">
-                <h2 class="text-lg font-semibold">Disclaimer</h2>
-                <p class="text-gray-400 text-sm">The original applications are the property of their respective owners, including but not limited to Epic Games Inc. The modifications provided here are solely for personal use, and the original applications must be legally obtained. Redistribution of these modified versions is done for educational purposes only, and no ownership of the original content is claimed.</p>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold">Fall Guys IPAs</h2>
+                <h3 class="text-l">If the regular IPA doesn't work, try the clean version.</h3>
+                <p class="text-gray-400">Fall Guys IPA includes the following tweaks:</p>
+                <ul class="list-disc list-inside text-gray-400">
+                    <li>Removed device restriction</li>
+                    <li>Allows editing files from the Files app</li>
+                    <li>MacOS Fullscreen Patch</li>
+                    <li>Lowered minimum iOS version to iOS 10</li>
+                </ul>
+                <p class="mt-2 text-gray-300"><strong>Current Version:</strong> 11.6.0</p>
+
+                <a href="#" class="block mt-2 bg-purple-600 hover:bg-purple-700 text-white text-center font-bold py-2 px-4 rounded"
+                   onclick="requestDownload('Fall Guys IPA', 'https://fnmacassistant.s3.us-west-1.amazonaws.com/FGMacIPAs/Fall_Guys-11.6.0.ipa', event)">
+                   Download Fall Guys IPA
+                </a>
             </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-gray-800 rounded-lg shadow-md">
+            <h2 class="text-lg font-semibold">Disclaimer</h2>
+            <p class="text-gray-400 text-sm">The original applications are the property of their respective owners, including but not limited to Epic Games Inc. The modifications provided here are solely for personal use, and the original applications must be legally obtained. Redistribution of these modified versions is done for educational purposes only, and no ownership of the original content is claimed.</p>
         </div>
     </div>
 </body>

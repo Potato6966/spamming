@@ -63,27 +63,27 @@
         border-radius: 10px;
       }
 
-      /* Logo Animation */
-      @keyframes floatUpDown {
+      /* Animated Logo (Bouncing Effect) */
+      @keyframes bounce {
         0%, 100% {
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-15px);
+          transform: translateY(-10px);
         }
       }
 
-      .animated-logo {
-        animation: floatUpDown 2s ease-in-out infinite;
+      .bouncing-logo {
+        animation: bounce 2s infinite ease-in-out;
       }
     </style>
 </head>
 <body class="text-white font-sans">
     <div class="max-w-3xl mx-auto p-6 text-center content-box">
-        <!-- Updated Logo with Animation -->
+        <!-- Updated Logo with Bounce Animation -->
         <img src="https://media.discordapp.net/attachments/1132402297272533104/1349049918538518588/IMG_3968.png?ex=67d1b024&is=67d05ea4&hm=807e2f3438297a5110f3c219eda7f36aae9084ec039999e2e26eabf2afb0dbf1&" 
              alt="Syrxty Logo" 
-             class="mx-auto w-48 md:w-64 lg:w-72 mb-4 animate-pulse animated-logo">
+             class="mx-auto w-48 md:w-64 lg:w-72 mb-4 bouncing-logo">
         
         <h1 class="text-3xl font-bold mb-4">Download Fortnite & Fall Guys IPAs</h1>
         
@@ -104,9 +104,6 @@
                     <li>Allows editing files from the Files app</li>
                     <li>MacOS Fullscreen Patch</li>
                     <li>Lowered minimum iOS version to iOS 10</li>
-                    <h1><------<b>IMPORTANTS 👇</b>------></h1>
-                    <li>The +Patched IPA file version is a special version devoid of any entitlements, enabling it to function seamlessly with virtually any certificate. However, it’s essential to note that...</li>
-                    <h1>if you using this version of IPA to play competitive could get you <b><u>BANNED</u></b>!</h1>
                 </ul>
                 <p class="mt-2 text-gray-300"><strong>Current Version:</strong> <b>v34.10</b></p>
 
@@ -114,30 +111,27 @@
                    onclick="requestDownload('Fortnite IPA', 'https://github.com/syrxty/spamming/releases/download/v34.10/Syrxty-FnIPA-v34.10.ipa', event)">
                    Download Fortnite IPA (Recommended)
                 </a>
-                <a href="#" class="block mt-2 bg-green-600 hover:bg-green-700 text-white text-center font-bold py-2 px-4 rounded animated-btn"
-                   onclick="requestDownload('Fortnite IPA +Patched', 'https://github.com/syrxty/spamming/releases/download/v34.10/Syrxty-FnIPA-v34.10-Patched.ipa', event)">
-                   Download Fortnite IPA (+Patched)
-                </a>
-            </div>
-
-            <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-                <h2 class="text-xl font-semibold">Fall Guys IPAs</h2>
-                <p class="text-gray-400">Fall Guys IPA includes the following tweaks:</p>
-                <ul class="list-disc list-inside text-gray-400">
-                    <li>Removed device restriction</li>
-                    <li>Allows editing files from the Files app</li>
-                    <li>MacOS Fullscreen Patch</li>
-                    <li>Lowered minimum iOS version to iOS 10</li>
-                </ul>
-                <p class="mt-2 text-gray-300"><strong>Current Version:</strong> <b>v11.6.0</b></p>
-
-                <a href="#" class="block mt-2 bg-purple-600 hover:bg-purple-700 text-white text-center font-bold py-2 px-4 rounded animated-btn"
-                   onclick="requestDownload('Fall Guys IPA', 'https://fnmacassistant.s3.us-west-1.amazonaws.com/FGMacIPAs/Fall_Guys-11.6.0.ipa', event)">
-                   Download Fall Guys IPA
-                </a>
             </div>
         </div>
     </div>
+
+    <!-- Discord Section -->
+    <section id="discordserver" class="features">
+      <div class="container text-center mt-10">
+        <h2 class="text-2xl font-bold">SyrxtyIPA | Discord</h2>
+        <p class="text-gray-300"><i class="bi bi-discord"></i> Our Discord Server</p>
+        <p class="text-gray-400">
+          IPA WILL ALSO BE UPDATE IN OUR DISCORD AND SUPPORT!
+        </p>
+        <br>
+        <iframe src="https://discord.com/widget?id=1069646270555246662&theme=dark" width="100%" height="500" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" style="border-radius: 15px; box-shadow: 0px 0px 10px rgba(0,0,0,0.85);"></iframe>
+        <br><br>
+        <button onclick="window.open('https://discord.gg/uq9bndvYuj', '_blank')" 
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-btn">
+          <i class="bi bi-discord"></i> <b>Join 400+ Discord Members</b>
+        </button>
+      </div>
+    </section>
 
     <footer class="text-center text-gray-400 mt-8 pb-4 bg-gray-900 p-4 rounded-lg shadow-md font-serif text-lg">
         Website made by <span class="text-white font-bold">Syrxty</span>, and IPA founded by <span class="text-white font-bold">FnMacIPA</span>.

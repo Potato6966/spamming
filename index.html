@@ -62,14 +62,28 @@
         padding: 20px;
         border-radius: 10px;
       }
+
+      /* Logo Animation */
+      @keyframes floatUpDown {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .animated-logo {
+        animation: floatUpDown 2s ease-in-out infinite;
+      }
     </style>
 </head>
 <body class="text-white font-sans">
     <div class="max-w-3xl mx-auto p-6 text-center content-box">
-        <!-- Updated Logo -->
+        <!-- Updated Logo with Animation -->
         <img src="https://media.discordapp.net/attachments/1132402297272533104/1349049918538518588/IMG_3968.png?ex=67d1b024&is=67d05ea4&hm=807e2f3438297a5110f3c219eda7f36aae9084ec039999e2e26eabf2afb0dbf1&" 
              alt="Syrxty Logo" 
-             class="mx-auto w-48 md:w-64 lg:w-72 mb-4 animate-pulse">
+             class="mx-auto w-48 md:w-64 lg:w-72 mb-4 animate-pulse animated-logo">
         
         <h1 class="text-3xl font-bold mb-4">Download Fortnite & Fall Guys IPAs</h1>
         
@@ -125,7 +139,7 @@
         </div>
     </div>
 
-        <footer class="text-center text-gray-400 mt-8 pb-4 bg-gray-900 p-4 rounded-lg shadow-md font-serif text-lg">
+    <footer class="text-center text-gray-400 mt-8 pb-4 bg-gray-900 p-4 rounded-lg shadow-md font-serif text-lg">
         Website made by <span class="text-white font-bold">Syrxty</span>, and IPA founded by <span class="text-white font-bold">FnMacIPA</span>.
     </footer>
 </body>

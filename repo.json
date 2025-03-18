@@ -1,6 +1,6 @@
 {
    "name": "SyrxtyIPA | Fortnite",
-   "identifier": "com.isacucho.epicgames",
+   "identifier": "com.syrxtyipa.epicgames",
    "iconURL": "https://github.com/syrxty/spamming/blob/main/icons/egs.png?raw=true",
    "apps": [
       {
@@ -12,11 +12,11 @@
          "subtitle": "Updated to the latest version",
          "versions": [
             {
-               "version": "34.10",
-               "date": "2025-03-11T12:00:00Z",
+               "version": "34.10.1",
+               "date": "2025-03-18T12:00:00Z",
                "localizedDescription": "Major update",
                "size": 501900000,
-               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v34.10/Syrxty-FnIPA-v34.10.ipa"
+               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v34.10.1/Syrxty-FnIPA-v34.10.1.ipa"
             }
          ],
          "appPermissions": { }

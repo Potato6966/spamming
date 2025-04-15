@@ -12,11 +12,11 @@
          "subtitle": "Updated to the latest version",
          "versions": [
             {
-               "version": "34.30",
+               "version": "34.30.1",
                "date": "2025-04-085T12:00:00Z",
                "localizedDescription": "Major update",
-               "size": 231530000,
-               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v34.30/Syrxty-FnIPA-v34.30.ipa"
+               "size": 69696969,
+               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v34.30.1/Syrxty-FnIPA-v34.30.1.ipa"
             }
          ],
          "appPermissions": { }

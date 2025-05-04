@@ -17,6 +17,21 @@
                "localizedDescription": "Major update",
                "size": 222010000,
                "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00.ipa"
+            },
+            {
+         "name": "Fortnite (+Patched)",
+         "bundleIdentifier": "com.epicgames.FortniteGame",
+         "developerName": "Epic Games",
+         "iconURL": "https://github.com/syrxty/spamming/blob/main/icons/fn.png?raw=true",
+         "localizedDescription": "This version of fortnite is only use if you only have a FREE certificate but it risky if you use this version to play since it could get you ban!",
+         "subtitle": "Updated to the latest version",
+         "versions": [
+            {
+               "version": "35.00",
+               "date": "2025-05-025T12:00:00Z",
+               "localizedDescription": "Major update",
+               "size": 222010000,
+               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched.ipa"
             }
          ],
          "appPermissions": { }

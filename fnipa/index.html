@@ -86,30 +86,32 @@
       <p class="mt-2 text-gray-300"><strong>REPO:</strong> <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a></p>
 
       <!-- Dropdown and Download Button -->
-      <<div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+<div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
   <div class="relative w-full md:w-64">
     <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
     <select id="ipaSelect"
-      class="block w-full appearance-none bg-gray-100 text-black border border-gray-300 rounded-md px-4 py-2 pr-10 leading-tight shadow focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
-      <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
+      class="block w-full appearance-none bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold border border-pink-400 rounded-md px-4 py-2 pr-10 leading-tight shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 hover:from-purple-600 hover:to-pink-600 transition-all duration-200 ease-in-out">
+      <option value="" disabled selected class="text-gray-200">Select a version of Fortnite/Fall Guys!</option>
       <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00.ipa">Recommended Fortnite Version (Normal)</option>
       <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+CaFPS.ipa">Non-Patched Fortnite Version (+CaFPS)</option>
       <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched.ipa">Patched Version (+Patched)</option>
       <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patch+CaFPS.ipa">Patched Version with CaFPS (+Patched+CaFPS)</option>
       <option value="https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa">Fall Guy IPA (v18.0.0)</option>
     </select>
-    <!-- Custom dropdown arrow -->
-    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+    <!-- Custom arrow -->
+    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
       <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
         <path d="M5.516 7.548a.625.625 0 0 1 .884-.884l4.1 4.1 4.1-4.1a.625.625 0 1 1 .884.884l-4.542 4.543a.625.625 0 0 1-.884 0L5.516 7.548z"/>
       </svg>
     </div>
   </div>
-  <button id="downloadButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded animated-btn disabled:opacity-50" disabled>
+
+  <button id="downloadButton"
+    class="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-2 px-4 rounded shadow-lg animated-btn disabled:opacity-50 transition-all duration-200 ease-in-out"
+    disabled>
     Download IPA
   </button>
 </div>
-
     <!-- Discord Widget -->
     <section id="discordserver" class="features">
       <div class="container text-center mt-10 content-box">

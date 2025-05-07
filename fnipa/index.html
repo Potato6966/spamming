@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SyrxtyIPA</title>
-  <meta http-equiv="refresh" content="10">
+  <meta http-equiv="refresh" content="15">
   <script src="https://cdn.tailwindcss.com"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N1XVJ5VYW"></script>
   <script>
@@ -58,6 +58,7 @@
 </head>
 <body class="text-white font-sans">
   <div class="max-w-3xl mx-auto p-6 text-center content-box">
+    <img src="./IMG_3968.png" alt="Syrxty Logo" class="mx-auto w-48 md:w-64 lg:w-72 mb-4 bouncing-logo" />
     <h1 class="text-3xl font-bold mb-4">Download Fortnite/Fall Guy IPAs for Mobile!</h1>
     <p class="text-center text-gray-300">
       Join the Syrxty Discord server to be the first to know when a new update releases, for IPAS!!
@@ -78,49 +79,32 @@
         <li>Allows editing files from the Files app</li>
         <li>MacOS Fullscreen Patch</li>
         <li>Lowered minimum iOS version to iOS 10</li>
-        <li><strong>+Patched IPA</strong> works with almost any certificate, but may get you <u><b>BANNED</b></u> in competitive! CaFPS also can get you ban in comepetitive!</li>
+        <li><strong>+Patched IPA</strong> works with almost any certificate, but may get you <u><b>BANNED</b></u> in competitive!</li>
       </ul>
 
       <p class="mt-2 text-gray-300"><strong>Current Fortnite Version:</strong> <b>v35.00</b></p>
       <p class="mt-2 text-gray-300"><strong>REPO:</strong> <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a></p>
 
-      <!-- Dropdown and Download Button -->
-<div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-  <div class="relative w-full md:w-64">
-    <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
-    <select id="ipaSelect"
-      class="block w-full appearance-none bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold border border-pink-400 rounded-md px-4 py-2 pr-10 leading-tight shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 hover:from-purple-600 hover:to-pink-600 transition-all duration-200 ease-in-out">
-      <option value="" disabled selected class="text-gray-200">Select a version of Fortnite/Fall Guys!</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00.ipa">Recommended Fortnite Version (Normal)</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+CaFPS.ipa">Non-Patched Fortnite Version (+CaFPS)</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched.ipa">Patched Version (+Patched)</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patch+CaFPS.ipa">Patched Version with CaFPS (+Patched+CaFPS)</option>
-      <option value="https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa">Fall Guy IPA (v18.0.0)</option>
-    </select>
-    <!-- Custom arrow -->
-    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-        <path d="M5.516 7.548a.625.625 0 0 1 .884-.884l4.1 4.1 4.1-4.1a.625.625 0 1 1 .884.884l-4.542 4.543a.625.625 0 0 1-.884 0L5.516 7.548z"/>
-      </svg>
-    </div>
-  </div>
+      <!-- Colorful Dropdown and Download Button -->
+      <div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+        <div class="relative w-full md:w-64">
+          <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
+          <select id="ipaSelect"
+            class="block w-full appearance-none bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold border border-pink-400 rounded-md px-4 py-2 pr-10 leading-tight shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:from-purple-600 hover:to-pink-600 transition-all duration-200 ease-in-out">
+            <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
+            <option value="#">Recommended Fortnite Version (Normal)</option>
+            <option value="#">Non-Patched Fortnite Version (+CaFPS)</option>
+            <option value="#">Patched Version (+Patched)</option>
+            <option value="#">Patched Version with CaFPS (+Patched+CaFPS)</option>
+            <option value="#">Fall Guy IPA (v18.0.0)</option>
+          </select>
+        </div>
 
-  <button id="downloadButton"
-    class="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-2 px-4 rounded shadow-lg animated-btn disabled:opacity-50 transition-all duration-200 ease-in-out"
-    disabled>
-    Download IPA
-  </button>
-</div>
-    <!-- Discord Widget -->
-    <section id="discordserver" class="features">
-      <div class="container text-center mt-10 content-box">
-        <iframe src="https://discord.com/widget?id=1069646270555246662&theme=dark" width="100%" height="300" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" style="border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.85);"></iframe>
+        <button id="downloadButton" class="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-2 px-4 rounded shadow-lg animated-btn disabled:opacity-50 transition-all duration-200 ease-in-out" disabled>
+          Download IPA
+        </button>
       </div>
-    </section>
-
-    <footer class="text-center text-gray-400 mt-8 pb-4 bg-gray-900 p-4 rounded-lg shadow-md font-serif text-lg">
-      If you think the file is a virus, you can upload it to VirusTotal to check if it is safe!
-    </footer>
+    </div>
   </div>
 
   <script>
@@ -134,19 +118,7 @@
     downloadButton.addEventListener('click', function () {
       const selectedOption = selectElement.options[selectElement.selectedIndex];
       const fileURL = selectedOption.value;
-      const fileName = selectedOption.text;
-
-      if (fileURL) {
-        gtag('event', 'download', {
-          'event_category': 'Downloads',
-          'event_label': fileName,
-          'value': 1
-        });
-
-        setTimeout(() => {
-          window.location.href = fileURL;
-        }, 300);
-      }
+      if (fileURL) window.location.href = fileURL;
     });
   </script>
 </body>

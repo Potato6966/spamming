@@ -109,11 +109,11 @@
           <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
           <select id="ipaSelect" class="block w-full bg-gray-700 text-white font-semibold border rounded-md px-4 py-2">
             <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
-            <option value="https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2.ipa">Recommended Fortnite Version (Normal)</option>
-            <option value="https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2+Tweaks.ipa">Tweak Fortnite Version (+Tweak)</option>
+            <option value="normal">Recommended Fortnite Version (Normal)</option>
+            <option value="tweak">Tweak Fortnite Version (+Tweak)</option>
             <option value="patched">Patched Version (+Patched)</option>
-            <option value="patchedcafps">Patched Version (+Tweaks)</option>
-            <option value="https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa">Fall Guy IPA (v18.0.0)</option>
+            <option value="patchedtweak">Patched Version (+Tweaks)</option>
+            <option value="fallguys">Fall Guy IPA (v18.0.0)</option>
           </select>
         </div>
         <button id="downloadButton" class="bg-green-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50" disabled>Download IPA</button>
@@ -121,22 +121,51 @@
     </div>
   </div>
 
-  <script>
-    const selectElement = document.getElementById('ipaSelect');
-    const downloadButton = document.getElementById('downloadButton');
-    const cafpsMessage = document.getElementById('cafpsMessage');
+<script>
+  const selectElement = document.getElementById('ipaSelect');
+  const downloadButton = document.getElementById('downloadButton');
+  const cafpsMessage = document.getElementById('cafpsMessage');
 
-    selectElement.addEventListener('change', function () {
-      downloadButton.disabled = !this.value;
-      const selectedValue = selectElement.value;
+  selectElement.addEventListener('change', function () {
+    downloadButton.disabled = !this.value;
+    const selectedValue = selectElement.value;
 
-      if (selectedValue === 'cafps') {
-        cafpsMessage.classList.remove('hidden');
-      } else {
-        cafpsMessage.classList.add('hidden');
-      }
-    });
-  </script>
+    if (selectedValue === 'cafps') {
+      cafpsMessage.classList.remove('hidden');
+    } else {
+      cafpsMessage.classList.add('hidden');
+    }
+  });
+
+  downloadButton.addEventListener('click', function () {
+    const selectedValue = selectElement.value;
+    let downloadLink;
+
+    switch (selectedValue) {
+      case 'normal':
+        downloadLink = 'https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2.ipa';
+        break;
+      case 'tweak':
+        downloadLink = 'https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2+Tweak.ipa';
+        break;
+      case 'patched':
+        downloadLink = 'https://example.com/fortnite-patched.ipa';
+        break;
+      case 'patchedtweak':
+        downloadLink = 'https://example.com/fortnite-patched-cafps.ipa';
+        break;
+      case 'fallguys':
+        downloadLink = 'https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa';
+        break;
+      default:
+        alert('Please select a version to download.');
+        return;
+    }
+
+    // Redirect to the selected download link
+    window.location.href = downloadLink;
+  });
+</script>
 </body>
 
 </html>

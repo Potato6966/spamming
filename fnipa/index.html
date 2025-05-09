@@ -110,9 +110,9 @@
           <select id="ipaSelect" class="block w-full bg-gray-700 text-white font-semibold border rounded-md px-4 py-2">
             <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
             <option value="normal">Recommended Fortnite Version (Normal)</option>
-            <option value="cafps">Non-Patched Fortnite Version (+CaFPS)</option>
+            <option value="cafps">Tweak Fortnite Version (+Tweak)</option>
             <option value="patched">Patched Version (+Patched)</option>
-            <option value="patchedcafps">Patched Version with +CaFPS</option>
+            <option value="patchedcafps">Patched Version (+CaFPS)</option>
             <option value="fallguys">Fall Guy IPA (v18.0.0)</option>
           </select>
         </div>
@@ -130,7 +130,7 @@
       downloadButton.disabled = !this.value;
       const selectedValue = selectElement.value;
 
-      if (selectedValue === 'cafps' || selectedValue === 'patchedcafps') {
+      if (selectedValue === 'cafps') {
         cafpsMessage.classList.remove('hidden');
       } else {
         cafpsMessage.classList.add('hidden');

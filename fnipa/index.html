@@ -54,6 +54,11 @@
       width: 20px;
       height: 20px;
     }
+
+    .separator-line {
+      margin: 10px 0;
+      border-top: 1px solid #555;
+    }
   </style>
 </head>
 
@@ -64,9 +69,6 @@
     <p class="text-center text-gray-300">
       Join the Syrxty Discord server to be the first to know when a new update releases, for IPAS!!
     </p>
-
-    <!-- Collapsible Information at the Top -->
-    <p id="topMessage" class="mt-2 text-gray-300 hidden">Unlocks higher FPS (up to 120) but may be risky in competitive!</p>
 
     <div class="text-center mt-2">
       <a href="https://discord.gg/uq9bndvYuj" target="_blank"
@@ -86,6 +88,12 @@
         <li>Lowered minimum iOS version to iOS 10</li>
         <li>+Patched IPA works with almost any certificate, but may get you <u><b>BANNED</b></u> in competitive!</li>
       </ul>
+
+      <!-- Separator Line -->
+      <hr class="separator-line">
+
+      <!-- Collapsible Message -->
+      <p id="cafpsMessage" class="mt-2 text-gray-300 hidden">Unlocks higher FPS (up to 120) but may be risky in competitive!</p>
 
       <p class="mt-2 text-gray-300"><strong>Current Fortnite Version:</strong> <b>v35.00</b></p>
       <p class="mt-2 text-gray-300"><strong>REPO:</strong> <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a></p>
@@ -110,31 +118,24 @@
   <script>
     const selectElement = document.getElementById('ipaSelect');
     const downloadButton = document.getElementById('downloadButton');
-    const topMessage = document.getElementById('topMessage');
+    const cafpsMessage = document.getElementById('cafpsMessage');
 
-    // Enable the download button when an option is selected
     selectElement.addEventListener('change', function () {
       downloadButton.disabled = !this.value;
-
-      // Check if the selected option is either of the +CaFPS versions
       const selectedText = selectElement.options[selectElement.selectedIndex].text;
-      if (selectedText.includes('Non-Patched Fortnite Version (+CaFPS)') || selectedText.includes('Patched Version with +CaFPS')) {
-        topMessage.classList.remove('hidden');
+      if (selectedText.includes('+CaFPS')) {
+        cafpsMessage.classList.remove('hidden');
       } else {
-        topMessage.classList.add('hidden');
+        cafpsMessage.classList.add('hidden');
       }
     });
 
-    // Download the selected file when the button is clicked
     downloadButton.addEventListener('click', function (event) {
       event.preventDefault();
-      const selectedOption = selectElement.options[selectElement.selectedIndex];
-      const fileURL = selectedOption.value;
-
+      const fileURL = selectElement.value;
       if (fileURL) {
         const link = document.createElement('a');
         link.href = fileURL;
-        link.download = '';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

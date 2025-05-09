@@ -81,70 +81,65 @@
         <li>Allows editing files from the Files app</li>
         <li>MacOS Fullscreen Patch</li>
         <li>Lowered minimum iOS version to iOS 10</li>
-        <li><strong>+Patched IPA</strong> works with almost any certificate, but may get you <u><b>BANNED</b></u> in competitive! And +CaFPS unlock your fps if you want to get 120fps but it also risky!</li>
+        <li>+Patched IPA works with almost any certificate, but may get you <u><b>BANNED</b></u> in competitive!</li>
       </ul>
 
       <p class="mt-2 text-gray-300"><strong>Current Fortnite Version:</strong> <b>v35.00</b></p>
       <p class="mt-2 text-gray-300"><strong>REPO:</strong> <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a></p>
 
       <div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-  <div class="relative w-full md:w-64">
-    <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
-    <select id="ipaSelect"
-      class="block w-full appearance-none bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold border border-pink-400 rounded-md px-4 py-2 pr-10 leading-tight shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:from-purple-600 hover:to-pink-600 transition-all duration-200 ease-in-out">
-      <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00.ipa">Recommended Fortnite Version (Normal)</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+CaFPS.ipa">Non-Patched Fortnite Version (+CaFPS)</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched.ipa">Patched Version (+Patched)</option>
-      <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched+CaFPS.ipa">Patched Version with CaFPS (+Patched+CaFPS)</option>
-      <option value="https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa">Fall Guy IPA (v18.0.0)</option>
-    </select>
-  </div>
-
-  <button id="downloadButton" class="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-2 px-4 rounded shadow-lg animated-btn disabled:opacity-50 transition-all duration-200 ease-in-out" disabled>
-    Download IPA
-  </button>
-</div>
-
-<script>
-  const selectElement = document.getElementById('ipaSelect');
-  const downloadButton = document.getElementById('downloadButton');
-
-  // Enable the download button when an option is selected
-  selectElement.addEventListener('change', function () {
-    downloadButton.disabled = !this.value;
-  });
-
-  // Download the selected file when the button is clicked
-  downloadButton.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevents page reload or jump to top
-    const selectedOption = selectElement.options[selectElement.selectedIndex];
-    const fileURL = selectedOption.value;
-
-    if (fileURL) {
-      // Create a temporary anchor element to initiate the download
-      const link = document.createElement('a');
-      link.href = fileURL;
-      link.download = ''; // Setting download attribute for proper file download
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  });
-</script>
+        <div class="relative w-full md:w-64">
+          <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
+          <select id="ipaSelect" class="block w-full bg-gray-700 text-white font-semibold border rounded-md px-4 py-2">
+            <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
+            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00.ipa">Recommended Fortnite Version (Normal)</option>
+            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+CaFPS.ipa">Non-Patched Fortnite Version (+CaFPS)</option>
+            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched.ipa">Patched Version (+Patched)</option>
+            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched+CaFPS.ipa">Patched Version with CaFPS (+Patched+CaFPS)</option>
+            <option value="https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa">Fall Guy IPA (v18.0.0)</option>
+          </select>
+        </div>
+        <button id="downloadButton" class="bg-green-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50" disabled>Download IPA</button>
       </div>
+
+      <!-- Collapsible Information -->
+      <p id="collapseContent" class="mt-2 text-gray-300 hidden"><li>• Toggle pointer locking with Left Option key (unlocked by default on game load)<br>• Unlocks 120 FPS option (requires 120Hz display for full effect)<br>• Unlocks graphic preset selection (Low, Medium, High, Epic; 120 FPS sets to Medium)<br>• Custom options menu (press P) for mouse sensitivity adjustments<br>• Mouse interaction with mobile UI<br></p>
     </div>
   </div>
-  <div class="text-center mt-4">
-  <a href="https://syrxtyfv.xyz/" target="_blank" 
-     class="bg-black hover:bg-gray-800 text-white font-bold py-1 px-3 rounded text-sm animated-btn inline-block w-auto">
-    Follow My Social!!
-  </a>
-</div>
 
-  <footer class="text-center text-gray-300 mt-8 pb-4 bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-lg font-sans text-lg">
-    <p class="mb-4">If you think the file is a virus, you can upload it to VirusTotal to check if it is safe!</p>
-  </footer>
+  <script>
+    const selectElement = document.getElementById('ipaSelect');
+    const downloadButton = document.getElementById('downloadButton');
+    const collapseContent = document.getElementById('collapseContent');
+
+    // Enable the download button when an option is selected
+    selectElement.addEventListener('change', function () {
+      downloadButton.disabled = !this.value;
+
+      // Show/hide additional info if the selected option contains "+CaFPS"
+      if (selectElement.options[selectElement.selectedIndex].text.includes('+CaFPS')) {
+        collapseContent.classList.remove('hidden');
+      } else {
+        collapseContent.classList.add('hidden');
+      }
+    });
+
+    // Download the selected file when the button is clicked
+    downloadButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      const selectedOption = selectElement.options[selectElement.selectedIndex];
+      const fileURL = selectedOption.value;
+
+      if (fileURL) {
+        const link = document.createElement('a');
+        link.href = fileURL;
+        link.download = '';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    });
+  </script>
 </body>
 
 </html>

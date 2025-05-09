@@ -1,0 +1,26 @@
+{
+   "name": "SyrxtyIPA | Fortnite",
+   "identifier": "com.syrxtyipa.epicgames",
+   "iconURL": "https://github.com/syrxty/spamming/blob/main/icons/egs.png?raw=true",
+   "apps": [
+      {
+         "name": "Fortnite  (+Patched+Tweak)",
+         "bundleIdentifier": "com.epicgames.FortniteGame",
+         "developerName": "Epic Games",
+         "iconURL": "https://github.com/syrxty/spamming/blob/main/icons/fn.png?raw=true",
+         "localizedDescription": "Play Fortnite your way.\n\nBe the last player standing in Battle Royale, Zero Build and Reload, explore and survive in LEGO Fortnite, blast to the finish with Rocket Racing or headline a concert with Fortnite Festival. Play thousands of free creator-made islands with friends, including deathruns, tycoons, racing, zombie survival, and more! Join the creator community and build your own island with Unreal Editor for Fortnite (UEFN) or Fortnite Creative tools.\n\nEach Fortnite island has an individual age rating so you can find the one that's right for you and your friends. Find it all in Fortnite!\n\nFortnite requires at least 4GB of RAM to open, and an Apple Developer account or certificate with the following entitlements:\nIncreased Memory Limit\nExtended Virtual Addressing.",
+         "subtitle": "Updated to the latest version",
+         "versions": [
+            {
+               "version": "35.00.2",
+               "date": "2025-05-09T12:00:00Z",
+               "localizedDescription": "Major update",
+               "size": 223130000,
+               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2+Patched+Tweak.ipa"
+            },
+         ],
+         "appPermissions": { }
+      }
+   ],
+   "news": []
+}

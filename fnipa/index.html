@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,8 +19,7 @@
       background-size: cover;
       color: white;
     }
-    
-    
+
     .animated-btn {
       transition: all 0.3s ease-in-out;
       position: relative;
@@ -56,6 +56,7 @@
     }
   </style>
 </head>
+
 <body class="text-white font-sans">
   <div class="max-w-3xl mx-auto p-6 text-center content-box">
     <img src="./IMG_3968.png" alt="Syrxty Logo" class="mx-auto w-48 md:w-64 lg:w-72 mb-4 bouncing-logo" />
@@ -65,7 +66,8 @@
     </p>
 
     <div class="text-center mt-2">
-      <a href="https://discord.gg/uq9bndvYuj" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-btn">
+      <a href="https://discord.gg/uq9bndvYuj" target="_blank"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-btn">
         <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg" alt="Discord Logo" class="discord-logo" />
         Join Discord!
       </a>
@@ -85,7 +87,6 @@
       <p class="mt-2 text-gray-300"><strong>Current Fortnite Version:</strong> <b>v35.00</b></p>
       <p class="mt-2 text-gray-300"><strong>REPO:</strong> <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a></p>
 
-      <!-- Colorful Dropdown and Download Button -->
       <div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
         <div class="relative w-full md:w-64">
           <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
@@ -115,15 +116,17 @@
       downloadButton.disabled = !this.value;
     });
 
-    downloadButton.addEventListener('click', function () {
+    downloadButton.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevents the page from scrolling to the top
       const selectedOption = selectElement.options[selectElement.selectedIndex];
       const fileURL = selectedOption.value;
       if (fileURL) window.location.href = fileURL;
     });
   </script>
-  
+
   <footer class="text-center text-gray-300 mt-8 pb-4 bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-lg font-sans text-lg">
-  <p class="mb-4">If you think the file is a virus, you can upload it to VirusTotal to check if it is safe!</p>
-</footer>
+    <p class="mb-4">If you think the file is a virus, you can upload it to VirusTotal to check if it is safe!</p>
+  </footer>
 </body>
+
 </html>

@@ -65,6 +65,9 @@
       Join the Syrxty Discord server to be the first to know when a new update releases, for IPAS!!
     </p>
 
+    <!-- Collapsible Information at the Top -->
+    <p id="topMessage" class="mt-2 text-gray-300 hidden">Unlocks higher FPS (up to 120) but may be risky in competitive!</p>
+
     <div class="text-center mt-2">
       <a href="https://discord.gg/uq9bndvYuj" target="_blank"
         class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-btn">
@@ -95,32 +98,30 @@
             <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00.ipa">Recommended Fortnite Version (Normal)</option>
             <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+CaFPS.ipa">Non-Patched Fortnite Version (+CaFPS)</option>
             <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched.ipa">Patched Version (+Patched)</option>
-            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched+CaFPS.ipa">Patched Version with CaFPS (+Patched+CaFPS)</option>
+            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched+CaFPS.ipa">Patched Version with +CaFPS</option>
             <option value="https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa">Fall Guy IPA (v18.0.0)</option>
           </select>
         </div>
         <button id="downloadButton" class="bg-green-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50" disabled>Download IPA</button>
       </div>
-
-      <!-- Collapsible Information -->
-      <p id="collapseContent" class="mt-2 text-gray-300 hidden"><li>• Toggle pointer locking with Left Option key (unlocked by default on game load)<br>• Unlocks 120 FPS option (requires 120Hz display for full effect)<br>• Unlocks graphic preset selection (Low, Medium, High, Epic; 120 FPS sets to Medium)<br>• Custom options menu (press P) for mouse sensitivity adjustments<br>• Mouse interaction with mobile UI<br></p>
     </div>
   </div>
 
   <script>
     const selectElement = document.getElementById('ipaSelect');
     const downloadButton = document.getElementById('downloadButton');
-    const collapseContent = document.getElementById('collapseContent');
+    const topMessage = document.getElementById('topMessage');
 
     // Enable the download button when an option is selected
     selectElement.addEventListener('change', function () {
       downloadButton.disabled = !this.value;
 
-      // Show/hide additional info if the selected option contains "+CaFPS"
-      if (selectElement.options[selectElement.selectedIndex].text.includes('+CaFPS')) {
-        collapseContent.classList.remove('hidden');
+      // Check if the selected option is either of the +CaFPS versions
+      const selectedText = selectElement.options[selectElement.selectedIndex].text;
+      if (selectedText.includes('Non-Patched Fortnite Version (+CaFPS)') || selectedText.includes('Patched Version with +CaFPS')) {
+        topMessage.classList.remove('hidden');
       } else {
-        collapseContent.classList.add('hidden');
+        topMessage.classList.add('hidden');
       }
     });
 

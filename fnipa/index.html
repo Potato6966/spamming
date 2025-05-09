@@ -92,8 +92,14 @@
       <!-- Separator Line -->
       <hr class="separator-line">
 
-      <!-- Collapsible Message -->
-      <p id="cafpsMessage" class="mt-2 text-gray-300 hidden">Unlocks higher FPS (up to 120) but may be risky in competitive!</p>
+      <!-- Updated CaFPS Message -->
+      <ul id="cafpsMessage" class="list-disc list-inside text-gray-400 text-left hidden">
+        <li>Toggle pointer locking with Left Option key (unlocked by default on game load)</li>
+        <li>Unlocks 120 FPS option (requires 120Hz display for full effect)</li>
+        <li>Unlocks graphic preset selection (Low, Medium, High, Epic; 120 FPS sets to Medium)</li>
+        <li>Custom options menu (press P) for mouse sensitivity adjustments</li>
+        <li>Mouse interaction with mobile UI</li>
+      </ul>
 
       <p class="mt-2 text-gray-300"><strong>Current Fortnite Version:</strong> <b>v35.00</b></p>
       <p class="mt-2 text-gray-300"><strong>REPO:</strong> <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a></p>
@@ -103,11 +109,11 @@
           <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
           <select id="ipaSelect" class="block w-full bg-gray-700 text-white font-semibold border rounded-md px-4 py-2">
             <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
-            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00.ipa">Recommended Fortnite Version (Normal)</option>
-            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+CaFPS.ipa">Non-Patched Fortnite Version (+CaFPS)</option>
-            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched.ipa">Patched Version (+Patched)</option>
-            <option value="https://github.com/syrxty/spamming/releases/download/v35.00/Syrxty-FnIPA-v35.00+Patched+CaFPS.ipa">Patched Version with +CaFPS</option>
-            <option value="https://github.com/EpicIPAs/FG/releases/download/v18.0.0/Fall_Guys-18.0.0.ipa">Fall Guy IPA (v18.0.0)</option>
+            <option value="normal">Recommended Fortnite Version (Normal)</option>
+            <option value="cafps">Non-Patched Fortnite Version (+CaFPS)</option>
+            <option value="patched">Patched Version (+Patched)</option>
+            <option value="patchedcafps">Patched Version with +CaFPS</option>
+            <option value="fallguys">Fall Guy IPA (v18.0.0)</option>
           </select>
         </div>
         <button id="downloadButton" class="bg-green-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50" disabled>Download IPA</button>
@@ -122,23 +128,12 @@
 
     selectElement.addEventListener('change', function () {
       downloadButton.disabled = !this.value;
-      const selectedText = selectElement.options[selectElement.selectedIndex].text;
-      if (selectedText.includes('+CaFPS')) {
+      const selectedValue = selectElement.value;
+
+      if (selectedValue === 'cafps' || selectedValue === 'patchedcafps') {
         cafpsMessage.classList.remove('hidden');
       } else {
         cafpsMessage.classList.add('hidden');
-      }
-    });
-
-    downloadButton.addEventListener('click', function (event) {
-      event.preventDefault();
-      const fileURL = selectElement.value;
-      if (fileURL) {
-        const link = document.createElement('a');
-        link.href = fileURL;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
       }
     });
   </script>

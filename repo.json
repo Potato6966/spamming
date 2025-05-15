@@ -18,6 +18,21 @@
                "size": 223130000,
                "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2.ipa"
             },
+            {
+         "name": "Fortnite (+Tweaks)",
+         "bundleIdentifier": "com.epicgames.FortniteGame",
+         "developerName": "Epic Games",
+         "iconURL": "https://github.com/syrxty/spamming/blob/main/icons/fn.png?raw=true",
+         "localizedDescription": "Normal Fortnite with Uncap FPS Tweak and MORE ON DISCORD!",
+         "subtitle": "Updated to the latest version",
+         "versions": [
+            {
+               "version": "35.00.2",
+               "date": "2025-05-09T12:00:00Z",
+               "localizedDescription": "Major update",
+               "size": 223130000,
+               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2+Tweak.ipa"
+            },
          ],
          "appPermissions": { }
       }

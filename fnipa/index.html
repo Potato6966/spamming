@@ -142,16 +142,13 @@ body {
 <script>
   const selectElement = document.getElementById('ipaSelect');
   const downloadButton = document.getElementById('downloadButton');
-  const cafpsMessage = document.getElementById('cafpsMessage');
 
   selectElement.addEventListener('change', function () {
     downloadButton.disabled = !this.value;
     const selectedValue = selectElement.value;
 
-    if (selectedValue === 'tweak' || selectedValue === "patchedtweak") {
-      cafpsMessage.classList.remove('hidden');
-    } else {
-      cafpsMessage.classList.add('hidden');
+    if (selectedValue === 'tweak' || selectedValue === 'patchedtweak') {
+      alert('Warning: Using the +Tweak version may cause bans in competitive play. Proceed at your own risk.');
     }
   });
 

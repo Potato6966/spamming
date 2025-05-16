@@ -25,7 +25,15 @@
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
 }
-
+.alert {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
     .animated-btn {
       transition: all 0.3s ease-in-out;
       position: relative;
@@ -117,6 +125,9 @@ body {
         <li>Unlocks graphic preset selection (Low, Medium, High, Epic; 120 FPS sets to Medium)</li>
         <li>Custom options menu (press P) for mouse sensitivity adjustments</li>
         <li>Mouse interaction with mobile UI</li>
+        <div class="alert bg-red-600 text-white p-3 rounded-md mt-4">
+  Disclaimer: Use the +Tweak file at your own risk. We are not responsible for any damages or incidents caused by this tweak, including bans.
+</div>
       </ul>
 
       <p class="mt-2 text-gray-300"><strong>Current Fortnite Version:</strong> <b>v35.00.2</b></p>
@@ -142,12 +153,20 @@ body {
 <script>
   const selectElement = document.getElementById('ipaSelect');
   const downloadButton = document.getElementById('downloadButton');
+  const cafpsMessage = document.getElementById('cafpsMessage');
 
   selectElement.addEventListener('change', function () {
     downloadButton.disabled = !this.value;
     const selectedValue = selectElement.value;
 
-    if (selectedValue === 'tweak' || selectedValue === 'patchedtweak') {
+    if (selectedValue === 'tweak' || selectedValue === "patchedtweak") {
+      cafpsMessage.classList.remove('hidden');
+    } else {
+      cafpsMessage.classList.add('hidden');
+    }
+  });
+
+  if (selectedValue === 'tweak' || selectedValue === 'patchedtweak') {
       alert('Warning: Using the +Tweak version may cause bans in competitive play. Proceed at your own risk.');
     }
   });

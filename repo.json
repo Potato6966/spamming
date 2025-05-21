@@ -12,11 +12,11 @@
          "subtitle": "Updated to the latest version",
          "versions": [
             {
-               "version": "35.00.2",
-               "date": "2025-05-09T12:00:00Z",
+               "version": "35.10",
+               "date": "2025-05-21T12:00:00Z",
                "localizedDescription": "Major update",
                "size": 223130000,
-               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2.ipa"
+               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.10/Syrxty-FnIPA-v35.10.ipa"
             },
       {
          "name": "Fortnite (+Tweaks)",
@@ -27,11 +27,11 @@
          "subtitle": "Updated to the latest version",
          "versions": [
             {
-               "version": "35.00.2",
-               "date": "2025-05-09T12:00:00Z",
+               "version": "35.10",
+               "date": "2025-05-21T12:00:00Z",
                "localizedDescription": "Major update",
                "size": 223130000,
-               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.00.2/Syrxty-FnIPA-v35.00.2+Tweak.ipa"
+               "downloadURL": "https://github.com/syrxty/spamming/releases/download/v35.10/Syrxty-FnIPA-v35.10+Tweak.ipa"
             },
          ],
          "appPermissions": { }

@@ -18,35 +18,83 @@
       background: url('./IMG_4107.jpeg') no-repeat center center fixed;
       background-size: cover;
       color: white;
-      padding-top: 80px;
-      padding-bottom: 100px;
+      padding-top: 100px;
     }
+
+    .top-bar,
+    footer {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      padding: 12px 28px;
+      border-radius: 9999px;
+      color: #ccc;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+    }
+
+    .top-bar {
+      top: 16px;
+    }
+
+    footer {
+      bottom: 16px;
+    }
+
     .content-box {
       background: rgba(0, 0, 0, 0.8);
       padding: 20px;
       border-radius: 10px;
     }
+
     .bouncing-logo {
       animation: bounce 2s infinite ease-in-out;
     }
+
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+
     .discord-logo {
       width: 20px;
       height: 20px;
     }
+
     .separator-line {
       margin: 10px 0;
       border-top: 1px solid #555;
     }
+
+    .animated-btn {
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .animated-btn img {
+      margin-right: 8px;
+    }
+
+    .animated-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+    }
   </style>
 </head>
+
 <body class="text-white font-sans">
-  <!-- iPhone-like Top Bar -->
-  <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black text-gray-200 text-sm px-6 py-2 rounded-full shadow-lg w-fit backdrop-blur-md">
-    IPA by Isacucho, lekksov, RT. Modified by Syrxty.
+  <div class="top-bar text-center">
+    IPA made by Isacucho, lekksov and RT (Tweaker). Modified by Syrxty :)
   </div>
 
   <div class="max-w-3xl mx-auto p-6 text-center content-box">
@@ -55,10 +103,12 @@
     <p class="text-center text-gray-300">
       Join the Syrxty Discord server to be the first to know when a new update releases, for IPAS!!
     </p>
+
     <div class="text-center mt-2">
       <a href="https://discord.gg/uq9bndvYuj" target="_blank"
-        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-btn inline-flex items-center justify-center gap-2">
-        <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg" alt="Discord Logo" class="discord-logo" />
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg" alt="Discord Logo"
+          class="discord-logo" />
         Fortnite Mobile is on the Appstore! Join Discord for updates!
       </a>
     </div>
@@ -71,26 +121,29 @@
         <li>Allows editing files from the Files app</li>
         <li>MacOS Fullscreen Patch</li>
         <li>Lowered minimum iOS version to iOS 10</li>
-        <li><b><u>WARNING:</u></b> +Patched IPA may get you banned in competitive!</li>
+        <li>+Patched IPA works with almost any certificate, but may get you <u><b>BANNED</b></u> in competitive!</li>
       </ul>
 
       <hr class="separator-line">
 
       <ul id="cafpsMessage" class="list-disc list-inside text-gray-400 text-left hidden">
-        <li>Toggle pointer locking with Left Option key</li>
-        <li>Unlocks 120 FPS option</li>
-        <li>Graphic preset selection (Low, Med, High, Epic)</li>
-        <li>Custom options menu (press P)</li>
+        <li>Toggle pointer locking with Left Option key (unlocked by default on game load)</li>
+        <li>Unlocks 120 FPS option (requires 120Hz display for full effect)</li>
+        <li>Unlocks graphic preset selection (Low, Medium, High, Epic; 120 FPS sets to Medium)</li>
+        <li>Custom options menu (press P) for mouse sensitivity adjustments</li>
         <li>Mouse interaction with mobile UI</li>
       </ul>
 
       <p class="mt-2 text-gray-300"><strong>Current Fortnite Version:</strong> <b>v36.00.1</b></p>
-      <p class="mt-2 text-gray-300"><strong>REPO:</strong> <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a></p>
+      <p class="mt-2 text-gray-300"><strong>REPO:</strong>
+        <a href="https://syrxtyfv.xyz/repo.json" class="text-blue-400 hover:underline">https://syrxtyfv.xyz/repo.json</a>
+      </p>
 
       <div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
         <div class="relative w-full md:w-64">
           <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
-          <select id="ipaSelect" class="block w-full bg-gray-700 text-white font-semibold border rounded-md px-4 py-2">
+          <select id="ipaSelect"
+            class="block w-full bg-gray-700 text-white font-semibold border rounded-md px-4 py-2">
             <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
             <option value="normal">Normal Fortnite Version (UPDATED)</option>
             <option value="tweak">Normal Tweak Fortnite Version (Updated)</option>
@@ -99,15 +152,15 @@
             <option value="fallguys">Fall Guy IPA (v19.0.0)</option>
           </select>
         </div>
-        <button id="downloadButton" class="bg-green-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50" disabled>Download IPA</button>
+        <button id="downloadButton"
+          class="bg-green-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50" disabled>Download IPA</button>
       </div>
     </div>
   </div>
 
-  <!-- iPhone-style Footer Pill -->
-  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-black text-gray-200 text-sm px-6 py-2 rounded-full shadow-lg w-fit backdrop-blur-md">
-    Check VirusTotal if you think the IPA is a virus!
-  </div>
+  <footer class="text-center">
+    Check virustotal if you think my ipa is a virus!
+  </footer>
 
   <script>
     const selectElement = document.getElementById('ipaSelect');
@@ -154,8 +207,10 @@
           alert('Please select a version to download.');
           return;
       }
+
       window.location.href = downloadLink;
     });
   </script>
 </body>
+
 </html>

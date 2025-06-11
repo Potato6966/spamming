@@ -14,135 +14,56 @@
     gtag('config', 'G-9N1XVJ5VYW', { 'debug_mode': true });
   </script>
   <style>
-    :root {
-      --glass-bg: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.15);
-      --text-soft: #e5e5e5;
-      --text-muted: #a1a1aa;
-      --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       background: url('./IMG_4107.jpeg') no-repeat center center fixed;
       background-size: cover;
-      color: var(--text-soft);
-      padding-top: 60px;
-    }
-
-    .top-bar {
-      backdrop-filter: blur(12px);
-      background: var(--glass-bg);
-      border-bottom: 1px solid var(--glass-border);
-      border-radius: 0 0 20px 20px;
-      color: var(--text-muted);
-      padding: 12px;
-      font-size: 0.95rem;
-      box-shadow: var(--shadow-soft);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      text-align: center;
-    }
-
-    .content-box {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      padding: 24px;
-      border-radius: 20px;
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow-soft);
-    }
-
-    footer {
-      backdrop-filter: blur(10px);
-      background: var(--glass-bg);
-      border-top: 1px solid var(--glass-border);
-      color: var(--text-muted);
-      border-radius: 20px 20px 0 0;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      text-align: center;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .animated-btn {
-      transition: all 0.3s ease-in-out;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 12px 16px;
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-    }
-
-    .animated-btn:hover {
-      transform: scale(1.03);
-      background-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-    }
-
-    .discord-logo {
-      width: 20px;
-      height: 20px;
-    }
-
-    .separator-line {
-      margin: 10px 0;
-      border-top: 1px solid var(--glass-border);
-    }
-
-    select, button {
-      backdrop-filter: blur(8px);
-      background-color: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      padding: 10px;
       color: white;
+      padding-top: 80px;
+      padding-bottom: 100px;
     }
-
-    select:focus, button:hover {
-      outline: none;
-      background-color: rgba(255, 255, 255, 0.12);
+    .content-box {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
     }
-
     .bouncing-logo {
       animation: bounce 2s infinite ease-in-out;
     }
-
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+    .discord-logo {
+      width: 20px;
+      height: 20px;
+    }
+    .separator-line {
+      margin: 10px 0;
+      border-top: 1px solid #555;
+    }
   </style>
 </head>
-
-<body>
-  <div class="top-bar">
-    IPA made by Isacucho, lekksov and RT (Tweaker). Modified by Syrxty :)
+<body class="text-white font-sans">
+  <!-- iPhone-like Top Bar -->
+  <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black text-gray-200 text-sm px-6 py-2 rounded-full shadow-lg w-fit backdrop-blur-md">
+    IPA by Isacucho, lekksov, RT. Modified by Syrxty.
   </div>
 
   <div class="max-w-3xl mx-auto p-6 text-center content-box">
     <img src="./IMG_3968.png" alt="Syrxty Logo" class="mx-auto w-48 md:w-64 lg:w-72 mb-4 bouncing-logo" />
     <h1 class="text-3xl font-bold mb-4">Download Fortnite/Fall Guy IPAs for Mobile!</h1>
     <p class="text-center text-gray-300">
-      Join the Syrxty Discord server to be the first to know when a new update releases, for IPAs!!
+      Join the Syrxty Discord server to be the first to know when a new update releases, for IPAS!!
     </p>
-
-    <div class="text-center mt-4">
-      <a href="https://discord.gg/uq9bndvYuj" target="_blank" class="animated-btn text-white">
+    <div class="text-center mt-2">
+      <a href="https://discord.gg/uq9bndvYuj" target="_blank"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-btn inline-flex items-center justify-center gap-2">
         <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg" alt="Discord Logo" class="discord-logo" />
-        Fortnite Mobile is on the App Store! Join Discord for updates!
+        Fortnite Mobile is on the Appstore! Join Discord for updates!
       </a>
     </div>
 
-    <div class="mt-6 bg-gray-800 bg-opacity-40 p-4 rounded-xl shadow-md">
+    <div class="mt-6 bg-gray-800 p-4 rounded-lg shadow-md">
       <h2 class="text-xl font-semibold">Fortnite IPAs</h2>
       <p class="text-gray-400">Fortnite IPA includes the following tweaks:</p>
       <ul class="list-disc list-inside text-gray-400 text-left">
@@ -150,15 +71,15 @@
         <li>Allows editing files from the Files app</li>
         <li>MacOS Fullscreen Patch</li>
         <li>Lowered minimum iOS version to iOS 10</li>
-        <li>+Patched IPA works with almost any certificate, but may get you <u><b>BANNED</b></u> in competitive!</li>
+        <li><b><u>WARNING:</u></b> +Patched IPA may get you banned in competitive!</li>
       </ul>
 
       <hr class="separator-line">
 
       <ul id="cafpsMessage" class="list-disc list-inside text-gray-400 text-left hidden">
         <li>Toggle pointer locking with Left Option key</li>
-        <li>Unlocks 120 FPS option (requires 120Hz display)</li>
-        <li>Unlocks graphic preset selection</li>
+        <li>Unlocks 120 FPS option</li>
+        <li>Graphic preset selection (Low, Med, High, Epic)</li>
         <li>Custom options menu (press P)</li>
         <li>Mouse interaction with mobile UI</li>
       </ul>
@@ -169,7 +90,7 @@
       <div class="mt-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
         <div class="relative w-full md:w-64">
           <label for="ipaSelect" class="mb-1 block text-sm font-medium text-white">Choose IPA Version:</label>
-          <select id="ipaSelect">
+          <select id="ipaSelect" class="block w-full bg-gray-700 text-white font-semibold border rounded-md px-4 py-2">
             <option value="" disabled selected>Select a version of Fortnite/Fall Guys!</option>
             <option value="normal">Normal Fortnite Version (UPDATED)</option>
             <option value="tweak">Normal Tweak Fortnite Version (Updated)</option>
@@ -178,14 +99,15 @@
             <option value="fallguys">Fall Guy IPA (v19.0.0)</option>
           </select>
         </div>
-        <button id="downloadButton" class="disabled:opacity-50" disabled>Download IPA</button>
+        <button id="downloadButton" class="bg-green-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50" disabled>Download IPA</button>
       </div>
     </div>
   </div>
 
-  <footer>
-    Made with ❤️ by Syrxty — Check VirusTotal if you're unsure. Stay safe!
-  </footer>
+  <!-- iPhone-style Footer Pill -->
+  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-black text-gray-200 text-sm px-6 py-2 rounded-full shadow-lg w-fit backdrop-blur-md">
+    Check VirusTotal if you think the IPA is a virus!
+  </div>
 
   <script>
     const selectElement = document.getElementById('ipaSelect');
@@ -232,10 +154,8 @@
           alert('Please select a version to download.');
           return;
       }
-
       window.location.href = downloadLink;
     });
   </script>
 </body>
-
 </html>

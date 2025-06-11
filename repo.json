@@ -12,17 +12,17 @@
       "subtitle": "Updated to the latest version",
       "versions": [
         {
-          "version": "36.00",
-          "date": "2025-06-07T00:00:00Z",
+          "version": "36.00.1",
+          "date": "2025-06-11T00:00:00Z",
           "localizedDescription": "Latest Version",
-          "size": 501900000,
-          "downloadURL": "https://github.com/potato6966/spamming/releases/download/v36.00/Syrxty-FnIPA-v36.00.ipa"
+          "size": 209138000,
+          "downloadURL": "https://github.com/potato6966/spamming/releases/download/v36.00.1/Syrxty-FnIPA-v36.00.1.ipa"
         }
       ],
-      "size": 251135109,
-      "version": "36.00",
-      "versionDate": "2025-06-07T00:00:00Z",
-      "downloadURL": "https://github.com/potato6966/spamming/releases/download/v36.00/Syrxty-FnIPA-v36.00.ipa",
+      "size": 209138000,
+      "version": "36.00.1",
+      "versionDate": "2025-06-11T00:00:00Z",
+      "downloadURL": "https://github.com/potato6966/spamming/releases/download/v36.00.1/Syrxty-FnIPA-v36.00.1.ipa",
       "appPermissions": {}
     }
   ],

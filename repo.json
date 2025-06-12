@@ -7,24 +7,13 @@
       "name": "Fortnite",
       "bundleIdentifier": "com.epicgames.FortniteGame",
       "developerName": "Epic Games",
-      "iconURL": "https://github.com/EpicIPAs/Fn/blob/main/files/icons/fn.png?raw=true",
-      "localizedDescription": "Play Fortnite your way.\n\nBe the last player standing in Battle Royale, Zero Build and Reload, explore and survive in LEGO Fortnite, blast to the finish with Rocket Racing or headline a concert with Fortnite Festival. Play thousands of free creator made islands with friends including deathruns, tycoons, racing, zombie survival and more! Join the creator community and build your own island with Unreal Editor for Fortnite (UEFN) or Fortnite Creative tools.\n\nEach Fortnite island has an individual age rating so you can find the one that's right for you and your friends. Find it all in Fortnite!\n\nFortnite requires at least 4GB of RAM to open, and an Apple Developer account or certificate with the following entitlements:\nIncreased Memory Limit\nExtended Virtual Addressing.",
-      "subtitle": "Updated to the latest version",
-      "versions": [
-        {
-          "version": "36.00.1",
-          "date": "2025-06-11T00:00:00Z",
-          "localizedDescription": "Latest Version",
-          "size": 209138000,
-          "downloadURL": "https://github.com/potato6966/spamming/releases/download/v36.00.1/Syrxty-FnIPA-v36.00.1.ipa"
-        }
-      ],
-      "size": 209138000,
       "version": "36.00.1",
       "versionDate": "2025-06-11T00:00:00Z",
+      "iconURL": "https://github.com/EpicIPAs/Fn/blob/main/files/icons/fn.png?raw=true",
+      "localizedDescription": "Play Fortnite your way.\n\nBe the last player standing in Battle Royale, Zero Build and Reload, explore and survive in LEGO Fortnite, blast to the finish with Rocket Racing or headline a concert with Fortnite Festival. Play thousands of free creator made islands with friends including deathruns, tycoons, racing, zombie survival and more! Join the creator community and build your own island with Unreal Editor for Fortnite (UEFN) or Fortnite Creative tools.",
+      "subtitle": "Updated to the latest version",
       "downloadURL": "https://github.com/potato6966/spamming/releases/download/v36.00.1/Syrxty-FnIPA-v36.00.1.ipa",
-      "appPermissions": {}
+      "size": 209138000
     }
-  ],
-  "news": []
+  ]
 }

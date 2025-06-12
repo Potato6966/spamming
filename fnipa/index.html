@@ -18,7 +18,8 @@
       background: url('./IMG_4107.jpeg') no-repeat center center fixed;
       background-size: cover;
       color: white;
-      padding-top: 100px;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
 
     .top-bar,
@@ -27,21 +28,24 @@
       left: 50%;
       transform: translateX(-50%);
       background: rgba(0, 0, 0, 0.85);
-      padding: 12px 28px;
+      padding: 10px 24px;
       border-radius: 9999px;
       color: #ccc;
       font-weight: 500;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(8px);
       z-index: 1000;
+      max-width: 90%;
+      text-align: center;
+      font-size: 0.95rem;
     }
 
     .top-bar {
-      top: 16px;
+      top: 10px;
     }
 
     footer {
-      bottom: 16px;
+      bottom: 10px;
     }
 
     .content-box {
@@ -55,8 +59,13 @@
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     .discord-logo {
@@ -89,11 +98,20 @@
       transform: scale(1.05);
       box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
     }
+
+    @media (max-width: 640px) {
+      .top-bar,
+      footer {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        border-radius: 20px;
+      }
+    }
   </style>
 </head>
 
 <body class="text-white font-sans">
-  <div class="top-bar text-center">
+  <div class="top-bar">
     IPA made by Isacucho, lekksov and RT (Tweaker). Modified by Syrxty :)
   </div>
 
@@ -158,7 +176,7 @@
     </div>
   </div>
 
-  <footer class="text-center">
+  <footer>
     Check virustotal if you think my ipa is a virus!
   </footer>
 

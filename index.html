@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +12,9 @@
     <style>
         .home-content .btn {
             margin-top: 2rem; /* Increased from 5px to 2rem for better spacing */
+            margin-left: 1rem; /* Added margin to move the button to the left */
+            position: relative; /* Ensure relative positioning */
+            bottom: -10px; /* Adjust as needed to move the button down */
         }
         /* General reset and font */
         * {
@@ -260,6 +264,11 @@
 
         .social-media {
             margin-top: 1rem; /* Added margin to move the social media down */
+            width: fit-content; /* Adjust width to fit content */
+            border-radius: var(--border-radius); /* Rounded corners */
+            padding: 0.5rem 1rem; /* Add some padding */
+            background-color: var(--second-bg-color); /* Background color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
         }
 
         .social-media a {
@@ -853,4 +862,100 @@
                         } else if (target.id === 'services') {
                             animateServices(target);
                         } else if (target.id === 'portfolio') {
-                            animatePortfolio(
+                            animatePortfolio(target);
+                        } else if (target.id === 'contact') {
+                            animateContact(target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+
+            // Canvas space background
+            const canvas = document.getElementById('space-bg');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let stars = [];
+            const numStars = 200;
+
+            function initStars() {
+                stars = [];
+                for (let i = 0; i < numStars; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                                    y: Math.random() * canvas.height,
+                        size: Math.random() * 2,
+                        opacity: Math.random()
+                    });
+                }
+            }
+
+            function drawStars() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#ffffff';
+                stars.forEach(star => {
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                    ctx.closePath();
+                    ctx.fill();
+                });
+            }
+
+            function animateStars() {
+                stars.forEach(star => {
+                    star.x -= 0.1;
+                    if (star.x < 0) {
+                        star.x = canvas.width;
+                        star.y = Math.random() * canvas.height;
+                    }
+                });
+                drawStars();
+                requestAnimationFrame(animateStars);
+            }
+
+            initStars();
+            animateStars();
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initStars();
+            });
+
+            // Animation functions (example)
+            function animateHome(target) {
+                // Add specific animations for the home section
+                console.log('Animating Home section');
+            }
+
+            function animateAbout(target) {
+                // Add specific animations for the about section
+                console.log('Animating About section');
+            }
+
+            function animateServices(target) {
+                // Add specific animations for the services section
+                 console.log('Animating Services section');
+            }
+
+             function animatePortfolio(target) {
+                // Add specific animations for the portfolio section
+                console.log('Animating Portfolio section');
+            }
+
+            function animateContact(target) {
+                // Add specific animations for the contact section
+                console.log('Animating Contact section');
+            }
+        });
+    </script>
+</body>
+
+</html>

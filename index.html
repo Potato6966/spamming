@@ -288,18 +288,38 @@
             border-radius: 25px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background var(--transition-duration) ease, transform 0.2s ease, box-shadow var(--transition-duration) ease;
+            transition: background var(--transition-duration) ease, transform 0.2s ease, box-shadow var(--transition-duration) ease, color 0.3s ease;
             user-select: none;
             box-shadow: 0 4px 15px var(--shadow-color);
             font-weight: 500;
-            margin-top: 1rem; /* Match social media margin */
-            display: inline-block; /* Ensure proper alignment */
+            margin-top: 1rem;
+            display: inline-block;
+            position: relative; /* For shadow positioning */
+            overflow: hidden; /* Clip the pseudo-element */
         }
 
         .home-content .btn:hover {
             background: #54d4b2;
             transform: scale(1.05);
             box-shadow: 0 6px 20px var(--shadow-color);
+            color: #000; /* Darken text on hover */
+        }
+
+        .home-content .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .home-content .btn:hover::before {
+            opacity: 1;
         }
 
         /* About Section */
@@ -867,7 +887,7 @@
                 observer.observe(section);
             });
 
-            // Canvas space background
+                        // Canvas space background
             const canvas = document.getElementById('space-bg');
             const ctx = canvas.getContext('2d');
 

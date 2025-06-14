@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Syrxty's GFX Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <style>
+        .home-content .btn {
+            margin-top: 2rem; /* Increased from 5px to 2rem for better spacing */
+        }
+        /* General reset and font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #181818;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--main-color);
+        }
+
+        /* Variables for colors */
+        :root {
+            --main-color: #00bfff;
+            /* Cyan-Blue */
+            --second-bg-color: #212121;
+            --bg-color: #181818;
+            --text-color: #ccd6f6;
+            --light-text-color: #a8b2d1;
+            --shadow-color: rgba(0, 191, 255, 0.2);
+            /* Cyan-Blue Shadow */
+            --text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+            /* Cyan-Blue Text Shadow */
+            --border-radius: 10px;
+            --transition-duration: 0.3s;
+        }
+
+        /* === SPACE BACKGROUND CANVAS === */
+        #space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: #000010;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--second-bg-color);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            transition: box-shadow var(--transition-duration) ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header.sticky {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--main-color);
+            user-select: none;
+            text-shadow: var(--text-shadow);
+            transition: transform var(--transition-duration) ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar a {
+            margin-left: 2rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--light-text-color);
+            transition: color var(--transition-duration) ease, text-shadow var(--transition-duration) ease;
+            position: relative;
+        }
+
+        .navbar a.active,
+        .navbar a:hover {
+            color: var(--main-color);
+            text-shadow: var(--text-shadow);
+        }
+
+        #menu-icon {
+            display: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: var(--main-color);
+            transition: transform var(--transition-duration) ease;
+        }
+
+        #menu-icon:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Responsive navbar for smaller screens */
+        @media (max-width: 768px) {
+            #menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                background: var(--second-bg-color);
+                width: 100%;
+                height: calc(100% - 60px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transform: translateX(-100%);
+                transition: transform var(--transition-duration) ease;
+                z-index: 1000;
+            }
+
+            .navbar.active {
+                transform: translateX(0);
+            }
+
+            .navbar a {
+                margin: 1.5rem 0;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Section headings */
+        .heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 4rem 0 2rem;
+            color: var(--main-color);
+            font-weight: 700;
+            user-select: none;
+            animation: fadeSlideIn 1.2s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            text-shadow: var(--text-shadow);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 3px;
+            width: 50px;
+            background: var(--main-color);
+            border-radius: 3px;
+        }
+
+        .heading.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Home Section */
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            padding: 8rem 2rem 4rem;
+            flex-wrap: wrap;
+            animation: fadeSlideIn 1s ease forwards;
+            opacity: 0;
+        }
+
+        .home.visible {
+            opacity: 1;
+        }
+
+        .home-img img {
+            max-width: 500px;
+            border-radius: var(--border-radius);
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 20px var(--shadow-color);
+            transition: box-shadow var(--transition-duration) ease;
+            user-select: none;
+        }
+
+        .home-img img:hover {
+            box-shadow: 0 0 40px var(--shadow-color);
+        }
+
+        .home-content {
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeSlideIn 1.5s ease forwards;
+        }
+
+        .home-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .home-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-text-color);
+        }
+
+        .home-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            user-select: none;
+            text-shadow: var(--text-shadow);
+            color: var(--text-color);
+        }
+
+        .home-content h1 span {
+            color: var(--main-color);
+        }
+
+        .home-content p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-text-color);
+            user-select: none;
+        }
+
+        .social-media {
+            margin-top: 1rem; /* Added margin to move the social media down */
+        }
+
+        .social-media a {
+            font-size: 1.3rem; /* Further reduced size */
+            margin-right: 0.6rem; /* Further reduced spacing */
+            color: var(--light-text-color);
+            transition: color var(--transition-duration) ease, transform var(--transition-duration) ease, filter var(--transition-duration) ease;
+            display: inline-block;
+            user-select: none;
+            filter: drop-shadow(0 0 2px var(--shadow-color));
+        }
+
+        .social-media a:hover {
+            color: var(--main-color);
+            transform: scale(1.05) rotate(5deg); /* Further reduced scale */
+            filter: drop-shadow(0 0 8px var(--shadow-color));
+        }
+
+        .btn {
+            background: var(--main-color);
+            color: #121212;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background var(--transition-duration) ease, transform 0.2s ease, box-shadow var(--transition-duration) ease;
+            user-select: none;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: #54d4b2;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+        .button:btn {
+            position: ;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 3rem 2rem;
+            flex-wrap: wrap;
+            animation: fadeSlideIn 1.2s ease forwards;
+            opacity: 0;
+            max-width: 800px;
+            margin: 3rem auto;
+            border-radius: var(--border-radius);
+            background: var(--second-bg-color);
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .about:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .about.visible {
+            opacity: 1;
+        }
+
+        .about-img {
+            max-width: 300px;
+            flex: 1;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            user-select: none;
+            transition: transform var(--transition-duration) ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-img img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            max-width: 500px;
+            flex: 2;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            color: var(--main-color);
+            margin-bottom: 0.5rem;
+            user-select: none;
+            text-shadow: var(--text-shadow);
+        }
+
+        .about-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            user-select: none;
+            color: var(--light-text-color);
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            user-select: none;
+        }
+
+        /* SERVICES SECTION */
+        .services-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            padding: 0 2rem 4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        .services-box {
+            max-width: 320px;
+            width: 100%;
+            flex: 1 1 300px;
+            background: var(--second-bg-color);
+            padding: 2rem 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 0.1rem solid var(--bg-color);
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: center;
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+            user-select: none;
+        }
+
+        .services-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+
+        .services-container.visible {
+            opacity: 1;
+        }
+
+        .services-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--main-color);
+            text-shadow: var(--text-shadow);
+            transition: color var(--transition-duration) ease;
+        }
+
+        .services-box h3:hover {
+            color: #fff;
+        }
+
+        .services-box p {
+            margin-bottom: 1.2rem;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            color: var(--light-text-color);
+            transition: color var(--transition-duration) ease;
+        }
+
+        .services-box p:hover {
+            color: #fff;
+        }
+
+        .services-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 2rem;
+            background: var(--bg-color);
+            animation: fadeSlideIn 1.6s ease forwards;
+            opacity: 0;
+        }
+
+        .portfolio.visible {
+            opacity: 1;
+        }
+
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .portfolio-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: box-shadow var(--transition-duration) ease, transform 0.4s ease;
+            background: var(--second-bg-color);
+        }
+
+        .portfolio-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+
+        .portfolio-box img {
+            width: 100%;
+            display: block;
+            border-radius: var(--border-radius);
+            transition: filter var(--transition-duration) ease;
+            filter: brightness(0.8);
+            user-select: none;
+        }
+
+        .portfolio-box:hover img {
+            filter: brightness(1);
+        }
+
+        .portfolio-info {
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 191, 255, 0.7), transparent);
+            /* Cyan-Blue Gradient */
+            width: 100%;
+            color: var(--text-color);
+            padding: 1rem;
+            font-size: 0.9rem;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            user-select: none;
+            transition: transform var(--transition-duration) ease;
+        }
+
+        .portfolio-box:hover .portfolio-info {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-details {
+            padding: 1rem;
+            color: var(--light-text-color);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .portfolio-details h4 {
+            color: var(--main-color);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 3rem 2rem;
+            max-width: 700px;
+            margin: 5rem auto; /* Increased margin-top to move it down */
+            background: var(--second-bg-color);
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #contact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact.visible {
+            opacity: 1;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--main-color);
+            user-select: none;
+            text-shadow: var(--text-shadow);
+        }
+
+        .contact p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-text-color);
+            user-select: none;
+        }
+
+        .contact a.btn {
+            font-size: 1.1rem;
+            padding: 0.75rem 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--second-bg-color);
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--light-text-color);
+            user-select: none;
+            transition: color var(--transition-duration) ease;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        footer:hover {
+            color: #ccc;
+        }
+
+        /* Animations */
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Custom Animations */
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Space background canvas -->
+    <canvas id="space-bg"></canvas>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="logo">Syrxty's GFX</div>
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Social Media</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="menu-icon" class="bx bx-menu"></div>
+    </header>
+
+    <!-- HOME -->
+    <section class="home" id="home">
+        <div class="home-img">
+            <img src="https://images-ext-1.discordapp.net/external/_uLtjKnOTDZeL-j9oKxCHGs0T85qJ-4R53Cbhck3LhI/https/i.imgur.com/lHQyzLi.jpg?format=webp&width=2176&height=1224"
+                alt="Syrxty's Profile" />
+        </div>
+        <div class="home-content">
+            <h3>Hi, I'm</h3>
+            <h1>Syrxty</h1>
+            <p>Top-tier professional GFX services for Fortnite Pfp & Thumbnails to elevate your profile.</p>
+            <div class="social-media">
+                <a href="https://www.twitch.tv/syrxty" target="_blank" rel="noopener" aria-label="Twitch"
+                    title="Twitch"><i class="bx bxl-twitch"></i></a>
+                <a href="https://discord.gg/f4G2MBdkRV" target="_blank" rel="noopener" aria-label="Discord"
+                    title="Discord"><i class="bx bxl-discord-alt"></i></a>
+                <a href="https://twitter.com/syrxty" target="_blank" rel="noopener" aria-label="Twitter"
+                    title="Twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.instagram.com/syrxty" target="_blank" rel="noopener" aria-label="Instagram"
+                    title="Instagram"><i class="bx bxl-instagram"></i></a>
+            </div>
+            <a class="btn" href="https://discord.gg/f4G2MBdkRV">Order it now!</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="https://media.discordapp.net/attachments/1132402297272533104/1368952898695729182/254D3D91-5997-40B4-823D-72DA6857C2CD.png?ex=684ed43c&is=684d82bc&hm=d17c80f068885068655267ca43b1391ec19c9931184674a61fb475062a326660&=&format=webp&quality=lossless"
+                alt="Syrxty's Profile About" />
+        </div>
+        <div class="about-content">
+            <h2>About Me</h2>
+            <h3>Passionate Graphic Designer & Twitch GFX Specialist</h3>
+            <p>I create professional overlays, panels, emotes, and animations to boost your Twitch channel and social
+                media presence. My designs are crafted with precision and creativity to make you stand out.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2 class="heading">Services/Pricing</h2>
+        <div class="services-container">
+            <div class="services-box">
+                <h3>🎭 Profile Picture (PFP) — £2.99</h3>
+                <p>Get a unique, eye-catching profile picture tailored to your personality or brand. Perfect for social
+                    media, streaming platforms, or personal branding.</p>
+                <p>Custom designs that stand out and represent you.</p>
+            </div>
+            <div class="services-box">
+                <h3>📸 Thumbnail — £4.99</h3>
+                <p>Engaging and professional thumbnails designed to attract viewers to your videos or streams.</p>
+                <p>Optimized for all platforms with vibrant visuals and clear messaging.</p>
+            </div>
+            <div class="services-box">
+                <h3>🖼️ Banner — £3.99</h3>
+                <p>Create stunning banners for your channel, website, or social media pages that reflect your style
+                    and theme.</p>
+                <p>High-quality designs that maintain clarity on all screen sizes.</p>
+            </div>
+            <div class="services-box">
+                <h3>📦 Product GFX — £6.99</h3>
+                <p>Custom graphics tailored to showcase your products professionally and attractively.</p>
+                <p>Ideal for online shops, promotional materials, and branding efforts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Social Media</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="https://media.discordapp.net/attachments/1132402297272533104/1383510120675151982/IMG_5046.png?ex=684f0db5&is=684dbc35&hm=fb6e64840b844069f725ff155c6d30d53035da2619c1000ea74aa4da9b28b85c&=&format=webp&quality=lossless"
+                    alt="TikTok" />
+                <div class="portfolio-info">
+                    <h4>TikTok</h4>
+                    <div class="portfolio-details">
+                        Check out my latest TikTok content for a glimpse into my design process and recent projects.
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="https://media.discordapp.net/attachments/1132402297272533104/1383510120431878276/IMG_5047.png?ex=684f0db5&is=684dbc35&hm=a3a73a6268163583356ac4e92ea9de474d16d4b3c83bbb3b1b4785fd3ca7adf3&=&format=webp&quality=lossless"
+                    alt="YouTube" />
+                <div class="portfolio-info">
+                    <h4>YouTube</h4>
+                    <div class="portfolio-details">
+                        Subscribe to my YouTube channel for tutorials, behind-the-scenes looks, and more GFX content.
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="https://media.discordapp.net/attachments/1132402297272533104/1383510120180350986/IMG_5048.png?ex=684f0db5&is=684dbc35&hm=c5c4b51381cec2a54e7132e1cc49e3262f4f7eee9b5321ba37c115623fc8a21c&=&format=webp&quality=lossless"
+                    alt="Twitter" />
+                <div class="portfolio-info">
+                    <h4>Twitter</h4>
+                    <div class="portfolio-details">
+                        Follow me on Twitter for daily updates, design tips, and to stay connected with the GFX community.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Interested in working together or need a custom quote? Reach out!</p>
+        <a href="https://discord.gg/f4G2MBdkRV" class="btn">Get In Touch</a>
+    </section>
+
+    <footer>
+        &copy; 2025 Syrxty's GFX Services. All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navbar menu toggle on mobile
+            const menuIcon = document.getElementById('menu-icon');
+            const navbar = document.getElementById('navbar');
+
+            if (menuIcon && navbar) {
+                menuIcon.addEventListener('click', () => {
+                    navbar.classList.toggle('active');
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Update active link after scrolling
+                    setTimeout(updateActiveLink, 100);
+                });
+            });
+
+            // Active link switching on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar a');
+
+            function updateActiveLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 80;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // Call on initial load to set the active link
+
+            // Sticky header on scroll
+            function toggleStickyHeader() {
+                const header = document.getElementById('header');
+                if (header) {
+                    if (window.scrollY > 50) {
+                        header.classList.add('sticky');
+                    } else {
+                        header.classList.remove('sticky');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', toggleStickyHeader);
+            toggleStickyHeader(); // Call on initial load
+
+            // Animate sections on scroll
+            const observerOptions = {
+                threshold: 0.2,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        target.classList.add('visible');
+                        observer.unobserve(target);
+
+                        // Custom animations based on section ID
+                        if (target.id === 'home') {
+                            animateHome(target);
+                        } else if (target.id === 'about') {
+                            animateAbout(target);
+                        } else if (target.id === 'services') {
+                            animateServices(target);
+                        } else if (target.id === 'portfolio') {
+                            animatePortfolio(

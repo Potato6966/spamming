@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +11,18 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <style>
         .home-content .btn {
-            margin-top: 2rem; /* Increased from 5px to 2rem for better spacing */
-            margin-left: 1rem; /* Added margin to move the button to the left */
-            position: relative; /* Ensure relative positioning */
-            bottom: -10px; /* Adjust as needed to move the button down */
+            margin-top: 2rem;
+            /* Increased from 5px to 2rem for better spacing */
+            margin-left: 1rem;
+            /* Added margin to move the button to the left */
+            position: relative;
+            /* Ensure relative positioning */
+            bottom: -15px;
+            /* Adjust as needed to move the button down */
+            left: -6px;
+            /* Move the button to the left */
         }
+
         /* General reset and font */
         * {
             margin: 0;
@@ -263,17 +270,25 @@
         }
 
         .social-media {
-            margin-top: 1rem; /* Added margin to move the social media down */
-            width: fit-content; /* Adjust width to fit content */
-            border-radius: var(--border-radius); /* Rounded corners */
-            padding: 0.5rem 1rem; /* Add some padding */
-            background-color: var(--second-bg-color); /* Background color */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
+            margin-top: 1rem;
+            /* Added margin to move the social media down */
+            width: fit-content;
+            /* Adjust width to fit content */
+            border-radius: var(--border-radius);
+            /* Rounded corners */
+            padding: 0.3rem 0.7rem;
+            /* Add some padding */
+            background-color: var(--second-bg-color);
+            /* Background color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            /* Optional shadow */
         }
 
         .social-media a {
-            font-size: 1.3rem; /* Further reduced size */
-            margin-right: 0.6rem; /* Further reduced spacing */
+            font-size: 1.1rem;
+            /* Further reduced size */
+            margin-right: 0.5rem;
+            /* Further reduced spacing */
             color: var(--light-text-color);
             transition: color var(--transition-duration) ease, transform var(--transition-duration) ease, filter var(--transition-duration) ease;
             display: inline-block;
@@ -283,7 +298,8 @@
 
         .social-media a:hover {
             color: var(--main-color);
-            transform: scale(1.05) rotate(5deg); /* Further reduced scale */
+            transform: scale(1.05) rotate(5deg);
+            /* Further reduced scale */
             filter: drop-shadow(0 0 8px var(--shadow-color));
         }
 
@@ -306,6 +322,7 @@
             transform: scale(1.05);
             box-shadow: 0 6px 20px var(--shadow-color);
         }
+
         .button:btn {
             position: ;
         }
@@ -526,7 +543,8 @@
         #contact {
             padding: 3rem 2rem;
             max-width: 700px;
-            margin: 5rem auto; /* Increased margin-top to move it down */
+            margin: 5rem auto;
+            /* Increased margin-top to move it down */
             background: var(--second-bg-color);
             border-radius: var(--border-radius);
             text-align: center;
@@ -879,80 +897,108 @@
             const ctx = canvas.getContext('2d');
 
             canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+                        canvas.height = window.innerHeight;
 
             let stars = [];
-            const numStars = 200;
+            const numStars = Math.max(canvas.width / 10, 150); // Adjust star density based on screen width
 
             function initStars() {
                 stars = [];
                 for (let i = 0; i < numStars; i++) {
                     stars.push({
                         x: Math.random() * canvas.width,
-                                    y: Math.random() * canvas.height,
-                        size: Math.random() * 2,
-                        opacity: Math.random()
+                        y: Math.random() * canvas.height,
+                        size: Math.random() * 2 + 0.5,
+                        opacity: Math.random(),
+                        twinkleSpeed: Math.random() * 0.02 + 0.01,
+                        originalOpacity: Math.random(),
                     });
                 }
             }
 
             function drawStars() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#ffffff';
+                ctx.fillStyle = '#000010'; // Dark background color
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
                 stars.forEach(star => {
                     ctx.beginPath();
                     ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
                     ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-                    ctx.closePath();
                     ctx.fill();
+
+                    // Twinkle effect
+                    star.opacity += star.twinkleSpeed;
+                    if (star.opacity >= 1) {
+                        star.twinkleSpeed = -Math.abs(star.twinkleSpeed);
+                    } else if (star.opacity <= 0) {
+                        star.twinkleSpeed = Math.abs(star.twinkleSpeed);
+                    }
                 });
             }
 
             function animateStars() {
-                stars.forEach(star => {
-                    star.x -= 0.1;
-                    if (star.x < 0) {
-                        star.x = canvas.width;
-                        star.y = Math.random() * canvas.height;
-                    }
-                });
                 drawStars();
                 requestAnimationFrame(animateStars);
+            }
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initStars(); // Re-initialize stars on resize
             }
 
             initStars();
             animateStars();
 
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                initStars();
-            });
+            window.addEventListener('resize', resizeCanvas);
 
-            // Animation functions (example)
+            // Animation functions for each section
             function animateHome(target) {
-                // Add specific animations for the home section
-                console.log('Animating Home section');
+                // Example: Slide in elements from left and right
+                const img = target.querySelector('.home-img img');
+                const content = target.querySelector('.home-content');
+
+                if (img) {
+                    img.style.animation = 'slideInLeft 1s ease forwards';
+                }
+                if (content) {
+                    content.style.animation = 'slideInRight 1s ease forwards';
+                }
             }
 
             function animateAbout(target) {
-                // Add specific animations for the about section
-                console.log('Animating About section');
+                // Example: Fade in elements from bottom
+                const img = target.querySelector('.about-img img');
+                const content = target.querySelector('.about-content');
+
+                if (img) {
+                    img.style.animation = 'fadeInUp 1s ease forwards';
+                }
+                if (content) {
+                    content.style.animation = 'fadeInUp 1.2s ease forwards';
+                }
             }
 
             function animateServices(target) {
-                // Add specific animations for the services section
-                 console.log('Animating Services section');
+                // Example: Staggered fade-in for each service box
+                const boxes = target.querySelectorAll('.services-box');
+                boxes.forEach((box, index) => {
+                    box.style.animation = `fadeInUp ${0.5 + index * 0.2}s ease forwards`;
+                });
             }
 
-             function animatePortfolio(target) {
-                // Add specific animations for the portfolio section
-                console.log('Animating Portfolio section');
+            function animatePortfolio(target) {
+                // Example: Staggered fade-in for each portfolio item
+                const items = target.querySelectorAll('.portfolio-box');
+                items.forEach((item, index) => {
+                    item.style.animation = `fadeInUp ${0.5 + index * 0.1}s ease forwards`;
+                });
             }
 
             function animateContact(target) {
-                // Add specific animations for the contact section
-                console.log('Animating Contact section');
+                // Example: Fade in the contact form
+                target.style.animation = 'fadeInUp 1s ease forwards';
             }
         });
     </script>

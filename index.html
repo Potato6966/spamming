@@ -10,7 +10,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <style>
-        /* General reset and font */
         * {
             margin: 0;
             padding: 0;
@@ -38,23 +37,18 @@
             color: var(--main-color);
         }
 
-        /* Variables for colors */
         :root {
             --main-color: #00bfff;
-            /* Cyan-Blue */
             --second-bg-color: #212121;
             --bg-color: #181818;
             --text-color: #ccd6f6;
             --light-text-color: #a8b2d1;
             --shadow-color: rgba(0, 191, 255, 0.2);
-            /* Cyan-Blue Shadow */
             --text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-            /* Cyan-Blue Text Shadow */
             --border-radius: 10px;
             --transition-duration: 0.3s;
         }
 
-        /* === SPACE BACKGROUND CANVAS === */
         #space-bg {
             position: fixed;
             top: 0;
@@ -65,7 +59,6 @@
             background: #000010;
         }
 
-        /* Header */
         .header {
             display: flex;
             justify-content: space-between;
@@ -124,7 +117,6 @@
             transform: rotate(90deg);
         }
 
-        /* Responsive navbar for smaller screens */
         @media (max-width: 768px) {
             #menu-icon {
                 display: block;
@@ -156,7 +148,6 @@
             }
         }
 
-        /* Section headings */
         .heading {
             font-size: 2.5rem;
             text-align: center;
@@ -189,7 +180,6 @@
             transform: translateY(0);
         }
 
-        /* Home Section */
         .home {
             display: flex;
             align-items: center;
@@ -295,15 +285,16 @@
             font-weight: 500;
             margin-top: 1rem;
             display: inline-block;
-            position: relative; /* For shadow positioning */
-            overflow: hidden; /* Clip the pseudo-element */
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
 
         .home-content .btn:hover {
             background: #54d4b2;
             transform: scale(1.05);
             box-shadow: 0 6px 20px var(--shadow-color);
-            color: #000; /* Darken text on hover */
+            color: #000;
         }
 
         .home-content .btn::before {
@@ -313,17 +304,19 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+            background: rgba(255, 255, 255, 0.15);
             opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 0;
+            transition: opacity 0.3s ease, transform 0.4s ease;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
         }
 
         .home-content .btn:hover::before {
             opacity: 1;
+            transform: scaleX(1);
         }
 
-        /* About Section */
         .about {
             display: flex;
             align-items: center;
@@ -392,7 +385,6 @@
             user-select: none;
         }
 
-        /* SERVICES SECTION */
         .services-container {
             display: flex;
             flex-direction: row;
@@ -457,7 +449,6 @@
             margin-bottom: 0;
         }
 
-        /* Portfolio Section */
         .portfolio {
             padding: 4rem 2rem;
             background: var(--bg-color);
@@ -508,7 +499,6 @@
             position: absolute;
             bottom: 0;
             background: linear-gradient(to top, rgba(0, 191, 255, 0.7), transparent);
-            /* Cyan-Blue Gradient */
             width: 100%;
             color: var(--text-color);
             padding: 1rem;
@@ -535,12 +525,10 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Contact Section */
         #contact {
             padding: 3rem 2rem;
             max-width: 700px;
             margin: 5rem auto;
-            /* Increased margin-top to move it down */
             background: var(--second-bg-color);
             border-radius: var(--border-radius);
             text-align: center;
@@ -579,7 +567,6 @@
             letter-spacing: 1px;
         }
 
-        /* Footer */
         footer {
             background: var(--second-bg-color);
             padding: 1.5rem 0;
@@ -595,7 +582,6 @@
             color: #ccc;
         }
 
-        /* Animations */
         @keyframes fadeSlideIn {
             0% {
                 opacity: 0;
@@ -619,7 +605,6 @@
             }
         }
 
-        /* Custom Animations */
         @keyframes slideInLeft {
             0% {
                 transform: translateX(-100%);
@@ -659,10 +644,8 @@
 </head>
 
 <body>
-    <!-- Space background canvas -->
     <canvas id="space-bg"></canvas>
 
-    <!-- HEADER -->
     <header class="header" id="header">
         <div class="logo">Syrxty's GFX</div>
         <nav class="navbar" id="navbar">
@@ -675,7 +658,6 @@
         <div id="menu-icon" class="bx bx-menu"></div>
     </header>
 
-    <!-- HOME -->
     <section class="home" id="home">
         <div class="home-img">
             <img src="https://images-ext-1.discordapp.net/external/_uLtjKnOTDZeL-j9oKxCHGs0T85qJ-4R53Cbhck3LhI/https/i.imgur.com/lHQyzLi.jpg?format=webp&width=2176&height=1224"
@@ -699,7 +681,6 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="about" id="about">
         <div class="about-img">
             <img src="https://media.discordapp.net/attachments/1132402297272533104/1368952898695729182/254D3D91-5997-40B4-823D-72DA6857C2CD.png?ex=684ed43c&is=684d82bc&hm=d17c80f068885068655267ca43b1391ec19c9931184674a61fb475062a326660&=&format=webp&quality=lossless"
@@ -713,7 +694,6 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services" id="services">
         <h2 class="heading">Services/Pricing</h2>
         <div class="services-container">
@@ -742,7 +722,6 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
     <section class="portfolio" id="portfolio">
         <h2 class="heading">Social Media</h2>
         <div class="portfolio-container">
@@ -779,7 +758,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="contact" id="contact">
         <h2>Contact Me</h2>
         <p>Interested in working together or need a custom quote? Reach out!</p>
@@ -790,10 +768,8 @@
         &copy; 2025 Syrxty's GFX Services. All rights reserved.
     </footer>
 
-    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Navbar menu toggle on mobile
             const menuIcon = document.getElementById('menu-icon');
             const navbar = document.getElementById('navbar');
 
@@ -803,7 +779,6 @@
                 });
             }
 
-            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -812,12 +787,10 @@
                         behavior: 'smooth'
                     });
 
-                    // Update active link after scrolling
                     setTimeout(updateActiveLink, 100);
                 });
             });
 
-            // Active link switching on scroll
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.navbar a');
 
@@ -839,9 +812,8 @@
             }
 
             window.addEventListener('scroll', updateActiveLink);
-            updateActiveLink(); // Call on initial load to set the active link
+            updateActiveLink();
 
-            // Sticky header on scroll
             function toggleStickyHeader() {
                 const header = document.getElementById('header');
                 if (header) {
@@ -854,9 +826,8 @@
             }
 
             window.addEventListener('scroll', toggleStickyHeader);
-            toggleStickyHeader(); // Call on initial load
+            toggleStickyHeader();
 
-            // Animate sections on scroll
             const observerOptions = {
                 threshold: 0.2,
             };
@@ -868,7 +839,6 @@
                         target.classList.add('visible');
                         observer.unobserve(target);
 
-                        // Custom animations based on section ID
                         if (target.id === 'home') {
                             animateHome(target);
                         } else if (target.id === 'about') {
@@ -888,7 +858,6 @@
                 observer.observe(section);
             });
 
-                        // Canvas space background
             const canvas = document.getElementById('space-bg');
             const ctx = canvas.getContext('2d');
 
@@ -896,7 +865,7 @@
             canvas.height = window.innerHeight;
 
             let stars = [];
-            const numStars = Math.max(canvas.width / 10, 150); // Adjust star density based on screen width
+            const numStars = Math.max(canvas.width / 10, 150);
 
             function initStars() {
                 stars = [];
@@ -914,7 +883,7 @@
 
             function drawStars() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#000010'; // Dark background color
+                ctx.fillStyle = '#000010';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
                 stars.forEach(star => {
@@ -923,7 +892,6 @@
                     ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
                     ctx.fill();
 
-                    // Twinkle effect
                     star.opacity += star.twinkleSpeed;
                     if (star.opacity >= 1) {
                         star.twinkleSpeed = -Math.abs(star.twinkleSpeed);
@@ -941,7 +909,7 @@
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
-                initStars(); // Re-initialize stars on resize
+                initStars();
             }
 
             initStars();
@@ -949,9 +917,7 @@
 
             window.addEventListener('resize', resizeCanvas);
 
-            // Animation functions for each section
             function animateHome(target) {
-                // Example: Slide in elements from left and right
                 const img = target.querySelector('.home-img img');
                 const content = target.querySelector('.home-content');
 
@@ -964,7 +930,6 @@
             }
 
             function animateAbout(target) {
-                // Example: Fade in elements from bottom
                 const img = target.querySelector('.about-img img');
                 const content = target.querySelector('.about-content');
 
@@ -977,7 +942,6 @@
             }
 
             function animateServices(target) {
-                // Example: Staggered fade-in for each service box
                 const boxes = target.querySelectorAll('.services-box');
                 boxes.forEach((box, index) => {
                     box.style.animation = `fadeInUp ${0.5 + index * 0.2}s ease forwards`;
@@ -985,7 +949,6 @@
             }
 
             function animatePortfolio(target) {
-                // Example: Staggered fade-in for each portfolio item
                 const items = target.querySelectorAll('.portfolio-box');
                 items.forEach((item, index) => {
                     item.style.animation = `fadeInUp ${0.5 + index * 0.1}s ease forwards`;
@@ -993,7 +956,6 @@
             }
 
             function animateContact(target) {
-                // Example: Fade in the contact form
                 target.style.animation = 'fadeInUp 1s ease forwards';
             }
         });
